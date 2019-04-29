@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/designs.css">
-    
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="./js/actions.js"></script>
 </head>
-<body>
+<body onload="next(current + 1)">
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -110,8 +111,17 @@
             </section>
         </div>
         <h2>Buscar</h2>
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="buscar.html" allowfullscreen></iframe>
+        <div class="embed-responsive embed-responsive-16by9 content__iframe">
+            <div class="block__iframe">
+                <iframe class="embed-responsive-item disabled" src="buscar.html" allowfullscreen></iframe>
+                <iframe class="embed-responsive-item disabled" src="step2.html" allowfullscreen></iframe>
+                <iframe class="embed-responsive-item disabled" src="step3.html" allowfullscreen></iframe>
+            </div>
+            
+            <div class="button__container">
+                <button class="btn btn-success" onclick="back(current - 1)">Atras</button>
+                <button class="btn btn-success" onclick="next(current + 1)">Siguiente</button>
+            </div>
         </div>
     </div>
     <footer class="footer">

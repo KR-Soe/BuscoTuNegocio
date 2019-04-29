@@ -1,0 +1,36 @@
+.button__container {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.button__container button {
+    display: inline-block;
+}
+
+.block__iframe {
+    position: relative;
+    width: 90%;
+    margin: 1em auto;
+    height: 400px;
+}
+
+.disabled {
+    display: none;
+}
+
+.enabled {
+    display: block;
+}
+
+#myCarousel {
+    height: 400px;
+    overflow: hidden;
+}
+
+.carousel-caption {
+    /* right: auto;
+    left: auto; */
+    padding-bottom: 0;
+    top: 0;
+}
