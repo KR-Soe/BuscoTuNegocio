@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/designs.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="./js/actions.js"></script>
+    <script src="./js/actions.js"></script>    
 </head>
 <body onload="next(current + 1)">
     <nav class="navbar navbar-inverse">
@@ -56,7 +56,68 @@
                     </form>
                     ¿No tiene una cuenta? <br>
                     Registrese de forma gratuita haciendo click
-                    <a href="registro.html">aqui.</a>
+                    <a id="modal-btn">aqui.</a>
+
+                    <!--        MODAL        -->  
+                    <div id="reg-modal" class="content-modal">
+                        <div class="body-modal">
+                            <div class="header-modal">
+                                <span id="close-modal-btn" class="close-modal">&times;</span>
+                                <h2>Registrate En Busuco Tu Negocio</h2>
+                            </div>
+                            <form name="reg-form" class="reg-form">
+                                <table class="reg-table">
+                                    <tr>
+                                        <td>
+                                            <label>Correo Electronico</label>
+                                        </td>
+                                        <td>
+                                            <input type="email" id="txtEmail" placeholder="Ejemplo@gmail.com" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Nombre Completo</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" id="txtNombre" required>
+                                        </td>   
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Telefono Movil</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" id="txtFono" maxlength="9" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Comuna</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" placeholder="Puente Alto..." required> 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Contraseña</label>
+                                        </td>
+                                        <td>
+                                            <input type="password" maxlength="15" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div>
+                                                <button id="reg-done" type="button" class="btn btn-success btn-lg">Registrarse</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
                 </p>
             </aside>
         </section>
@@ -133,6 +194,7 @@
             Desarrolladores: Manosalva Lukas. Vera Sergio
         </p>
     </footer>
+    <script src="./js/modal.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
 </body>

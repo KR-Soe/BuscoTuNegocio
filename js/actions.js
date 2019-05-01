@@ -31,4 +31,3 @@ function back(number) {
     item.classList.add("enabled")
     current = current - 1;
 }
-
