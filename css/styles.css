@@ -1,6 +1,6 @@
 .button__container {
     width: 100%;
-    display: block;
+    display: inline-block;
     text-align: center;
 }
 
@@ -24,7 +24,6 @@
 }
 
 #myCarousel {
-    height: 400px;
     overflow: hidden;
 }
 
@@ -33,4 +32,23 @@
     left: auto; */
     padding-bottom: 0;
     top: 0;
+}
+.cat-rad{
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.cat-rad + img{
+    width: 93px;
+    height: 75px;
+    cursor: pointer;
+}
+.cat-rad:checked + img{
+    outline: 2px solid #f00;
+}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    margin: auto;
+    width: 100%;
+    height: 120px;
 }

@@ -24,5 +24,10 @@ function closeModal(){
 function outsideClick(e){
     if(e.target == modal){
         modal.style.display = "none";
+        clearData();
     }
+}
+
+function clearData(){
+    const clear = document.querySelectorAll(".reg-data");
 }
