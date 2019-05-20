@@ -4,7 +4,6 @@ function next(number) {
     if(number === 3) {
         return
     }
-
     const listIframes = document.querySelectorAll(".embed-responsive-item");
     const item =  listIframes[number]
 

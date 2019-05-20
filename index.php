@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-<?php //include('controller.php'); ?>
+﻿<!DOCTYPE html>
+<?php include('controller.php'); 
+    session_start();
+?>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -9,9 +11,60 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/designs.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="./js/actions.js"></script>    
+    <script src="./js/actions.js"></script>
+    <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>    
 </head>
 <body onload="next(current + 1)">
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '442847286518472',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v3.3'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/es_LA/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+   FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+   });
+    
+   function checkLoginState() {
+     FB.getLoginStatus(function(response) {
+    validarUsuario();     
+     statusChangeCallback(response);
+   });
+   }
+     
+    function validarUsuario() {  
+        FB.getLoginStatus(function(response) {  
+           if(response.status == 'connected') {  
+              FB.api('/me', function(response) {  
+                  alert('Hola ' + response.name);  
+              });  
+        } 
+        else if(response.status == 'not_authorized') {  
+            alert('Debes autorizar la app!');  
+        } 
+        else {  
+            alert('Debes ingresar a tu cuenta de Facebook!');  
+        }  
+        });  
+    }
+</script>  
+
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -19,9 +72,10 @@
             </div>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Inicio</a></li>
+                    <li><a href="profile.php">Publicar</a></li>
                     <li><a href="#">Negocios Vip</a></li>
-                    <li><a href="#">Sobre Nosotros</a></li>
                     <li><a href="#">Contactanos</a></li>
+		            <li><a href="politicaPrivacidad.html">Politica de Privacidad</a></li>
                 </ul>
         </div>
     </nav>
@@ -44,7 +98,7 @@
                 <p>
                     Si usted es dueño de algun negocio puede registrarlo
                     con tal solo tener una cuenta e iniciando sesión.
-                    <form action="" method="POST">
+                    <form action="validate.php" method="POST">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                             <input id="email" type="text" class="form-control" name="email" placeholder="Coreo Electronico" style="max-width: 150px;" required>
@@ -54,6 +108,8 @@
                             <input id="password" type="password" class="form-control" name="password" placeholder="Contraseña" style="max-width: 150px;" required>
                         </div>
                         <button type="submit" class="btn btn-default">Ingresar</button>
+                        <fb:login-button scope="public_profile,email" size="medium" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="false" onlogin="checkLoginState();"></fb:login-button>
+                        
                     </form>
                     ¿No tiene una cuenta? <br>
                     Registrese de forma gratuita haciendo click
@@ -66,14 +122,23 @@
                                 <span id="close-modal-btn" class="close-modal">&times;</span>
                                 <h2>Registrate En Busco Tu Negocio</h2>
                             </div>
-                            <form name="reg-form" class="reg-form" action="controller.php">
+			    
+                            <form name="reg-form" class="reg-form" method="POST" action="database.php">
                                 <table class="reg-table">
+                                    <tr>
+                                        <td>
+                                            <label>RUT</label>
+                                        </td>
+                                        <td>
+                                            <input class="reg-data" type="text" name="txtRut" placeholder="11222333-4" maxlength="10" required>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td>
                                             <label>Correo Electronico</label>
                                         </td>
                                         <td>
-                                            <input class="reg-data" type="email" name="txtEmail" placeholder="Ejemplo@gmail.com" required>
+                                            <input class="reg-data" type="email" name="txtEmail" placeholder="Ejemplo@gmail.com" maxlength="50" required>
                                         </td>
                                     </tr>
                                     <tr>
@@ -81,7 +146,7 @@
                                             <label>Nombre Completo</label>
                                         </td>
                                         <td>
-                                            <input class="reg-data" type="text" name="txtNombre" required>
+                                            <input class="reg-data" type="text" name="txtNombre" maxlength="55" required>
                                         </td>   
                                     </tr>
                                     <tr>
@@ -97,7 +162,7 @@
                                             <label>Comuna</label>
                                         </td>
                                         <td>
-                                            <input class="reg-data" type="text" name="txtComuna" placeholder="Puente Alto..." required> 
+                                            <input class="reg-data" type="text" name="txtComuna" placeholder="Puente Alto" maxlength="20" required> 
                                         </td>
                                     </tr>
                                     <tr>
@@ -111,7 +176,8 @@
                                     <tr>
                                         <td colspan="2">
                                             <div>
-                                                <button id="reg-done" type="button" class="btn btn-success btn-lg" name="save-reg">Registrarse</button>
+                                                <!-- <button id="reg-done" type="button" class="btn btn-success btn-lg" name="save-reg" href="database.php">Registrarse</button> -->
+                                                <input type="submit" value="Registrarse">
                                             </div>
                                         </td>
                                     </tr>
