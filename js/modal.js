@@ -13,7 +13,6 @@ closeBtn.addEventListener("click", closeModal);
 window.addEventListener("click", outsideClick);
 done.addEventListener("click", closeModal);
 function openModal(){
-    console.log('test modal')
     modal.style.display = "block";
 }
 
