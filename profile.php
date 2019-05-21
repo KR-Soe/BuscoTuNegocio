@@ -45,7 +45,7 @@
         <section class="main row">
             <article class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
                 <h1>
-                    Bienvenido <?php echo 'Swordeath';//$_SESSION['user'] ?>
+                    Bienvenido <?php echo $_SESSION['user'] ?>
                 </h1>
                 <p>Para publicar su negocio rellene los siguientes campos:</p>
             </article>
@@ -64,7 +64,41 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label>Comuna</label>
-                        <input type="text" class="form-control" id="comunaN" placeholder="Recoleta">
+                        <select class="form-control" name="cboComuna">
+                            <option value="">Seleccione</option>
+                            <option value="Macul">Macúl</option>
+                            <option value="Cerrillos">Cerrillos</option>
+                            <option value="Cerro Navia">Cerro Navia</option>
+                            <option value="Conchali">Conchalí</option>
+                            <option value="El Bosque">El Bosque</option>
+                            <option value="Estacion Central">Estacion Central</option>
+                            <option value="Huechuraba">Huechuraba</option>
+                            <option value="Independencia">Independencia</option>
+                            <option value="La Cisterna">La Cisterna</option>
+                            <option value="La Florida">La Florida</option>
+                            <option value="La Granja">La Granja</option>
+                            <option value="La Pintana">La Pintana</option>
+                            <option value="La Reina">La Reina</option>
+                            <option value="Las Condes">Las Condes</option>
+                            <option value="Lo Barnechea">Lo Barnechea</option>
+                            <option value="Lo Espejo">Lo Espejo</option>
+                            <option value="Lo Prado">Lo Prado</option>
+                            <option value="Maipu">Maipú</option>
+                            <option value="Nunoa">Ñuñoa</option>
+                            <option value="Pedro Aguirres Cerda">Pedro Aguirres Cerda</option>
+                            <option value="Penalolen">Peñalolen</option>
+                            <option value="Providencia">Providencia</option>
+                            <option value="Quilicura">Quilicura</option>
+                            <option value="Quinta Normal">Quinta Normal</option>
+                            <option value="Recoleta">Recoleta</option>
+                            <option value="Renca">Renca</option>
+                            <option value="San Joaquin">San Joaquín</option>
+                            <option value="San Miguel">San Miguel</option>
+                            <option value="San Ramón">San Ramón</option>
+                            <option value="Santiago">Santiago</option>
+                            <option value="Pudahuel">Pudahuel</option>
+                            <option value="Vitacura">Vitacura</option>
+                        </select>
                     </div>
                     <div class="form-group col-md-4">
                         <label>Direccion</label>
@@ -82,6 +116,9 @@
                 <input type="submit" value="Agregar Negocio">
             </form>
         </section>
+        <div class="row">
+            <h2>Lista de Solicitudes (<?php ?>0)</h2>
+        </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 

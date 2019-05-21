@@ -162,7 +162,41 @@
                                             <label>Comuna</label>
                                         </td>
                                         <td>
-                                            <input class="reg-data" type="text" name="txtComuna" placeholder="Puente Alto" maxlength="20" required> 
+                                            <select class="form-control" name="cboComuna">
+                                                <option value="">Seleccione</option>
+                                                <option value="Macul">Macúl</option>
+                                                <option value="Cerrillos">Cerrillos</option>
+                                                <option value="Cerro Navia">Cerro Navia</option>
+                                                <option value="Conchali">Conchalí</option>
+                                                <option value="El Bosque">El Bosque</option>
+                                                <option value="Estacion Central">Estacion Central</option>
+                                                <option value="Huechuraba">Huechuraba</option>
+                                                <option value="Independencia">Independencia</option>
+                                                <option value="La Cisterna">La Cisterna</option>
+                                                <option value="La Florida">La Florida</option>
+                                                <option value="La Granja">La Granja</option>
+                                                <option value="La Pintana">La Pintana</option>
+                                                <option value="La Reina">La Reina</option>
+                                                <option value="Las Condes">Las Condes</option>
+                                                <option value="Lo Barnechea">Lo Barnechea</option>
+                                                <option value="Lo Espejo">Lo Espejo</option>
+                                                <option value="Lo Prado">Lo Prado</option>
+                                                <option value="Maipu">Maipú</option>
+                                                <option value="Nunoa">Ñuñoa</option>
+                                                <option value="Pedro Aguirres Cerda">Pedro Aguirres Cerda</option>
+                                                <option value="Penalolen">Peñalolen</option>
+                                                <option value="Providencia">Providencia</option>
+                                                <option value="Quilicura">Quilicura</option>
+                                                <option value="Quinta Normal">Quinta Normal</option>
+                                                <option value="Recoleta">Recoleta</option>
+                                                <option value="Renca">Renca</option>
+                                                <option value="San Joaquin">San Joaquín</option>
+                                                <option value="San Miguel">San Miguel</option>
+                                                <option value="San Ramón">San Ramón</option>
+                                                <option value="Santiago">Santiago</option>
+                                                <option value="Pudahuel">Pudahuel</option>
+                                                <option value="Vitacura">Vitacura</option>
+                                            </select>
                                         </td>
                                     </tr>
                                     <tr>
@@ -227,7 +261,7 @@
                                 </tr>
                                 <tr>
                                     <td><label><input type="radio" class="radio" name="opradio">Ñuñoa</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">Pedro Aguirre Cerda</label></td>
+                                    <td><label><input type="radio" class="radio" name="opradio">Pedro Aguirres Cerda</label></td>
                                     <td><label><input type="radio" class="radio" name="opradio">Peñalolén</label></td>
                                 </tr>
                                 <tr>

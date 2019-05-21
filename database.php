@@ -5,7 +5,7 @@
         $uEmail = $_POST['txtEmail'];
         $uFullName = $_POST['txtNombre'];
         $uPhone = $_POST['txtFono'];
-        $uAddress = $_POST['txtComuna'];
+        $uAddress = $_POST['cboComuna'];
         $uPassword = $_POST['txtPassword'];
 
         $exQuery = "Insert into usuario(email,password) values ('$uEmail','$uPassword')";
