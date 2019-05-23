@@ -28,9 +28,9 @@
             </div>
                 <ul class="nav navbar-nav">
                     <li><a href="index.php">Inicio</a></li>
-                    <li class="active"><a href="#">Publicar</a></li>
-                    <li><a href="#">Negocios Vip</a></li>
-                    <li><a href="#">Contactanos</a></li>
+                    <li class="active"><a href="#">Perfil</a></li>
+                    <li><a href="premium.php">Negocios Vip</a></li>
+                    <li><a href="contact.php">Contactanos</a></li>
 		            <li><a href="politicaPrivacidad.html">Politica de Privacidad</a></li>
                 </ul>
         </div>

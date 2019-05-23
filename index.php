@@ -72,9 +72,9 @@
             </div>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Inicio</a></li>
-                    <li><a href="profile.php">Publicar</a></li>
-                    <li><a href="#">Negocios Vip</a></li>
-                    <li><a href="#">Contactanos</a></li>
+                    <li><a href="profile.php">Perfil</a></li>
+                    <li><a href="premium.php">Negocios Vip</a></li>
+                    <li><a href="contact.php">Contactanos</a></li>
 		            <li><a href="politicaPrivacidad.html">Politica de Privacidad</a></li>
                 </ul>
         </div>
@@ -125,14 +125,6 @@
 			    
                             <form name="reg-form" class="reg-form" method="POST" action="database.php">
                                 <table class="reg-table">
-                                    <tr>
-                                        <td>
-                                            <label>RUT</label>
-                                        </td>
-                                        <td>
-                                            <input class="reg-data" type="text" name="txtRut" placeholder="11222333-4" maxlength="10" required>
-                                        </td>
-                                    </tr>
                                     <tr>
                                         <td>
                                             <label>Correo Electronico</label>
@@ -373,7 +365,9 @@
                         </form>
                     </div>
                     <div class="embed-responsive-item disabled">
-                        <div>eseeee papuuuuu finishhhhhh</div>
+                        <div>
+                            <h1>Negocios Encontrados:</h1>
+                        </div>
                     </div>
                     <div class="button__container">
                         <button class="btn btn-success" onclick="back(current - 1)">Atras</button>
