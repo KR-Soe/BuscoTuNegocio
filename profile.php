@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <?php 
     session_start();
+    error_reporting(0);
     $varsesion = $_SESSION['user'];
-
     if($varsesion == null || $varsesion = ''){
         echo 'Inicie sesion para continuar';
+        echo $varsesion;
         die();
     }
 ?>
@@ -47,6 +48,8 @@
                 <h1>
                     Bienvenido <?php echo $_SESSION['user'] ?>
                 </h1>
+                <p><a href="session.off.php">Cerrar Sesion</a></p>
+                
                 <p>Para publicar su negocio rellene los siguientes campos:</p>
             </article>
         </section>

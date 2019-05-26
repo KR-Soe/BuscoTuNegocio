@@ -157,6 +157,8 @@ input[type=radio]:hover{
     background: #19530D;
 }
 .buscar{
+    padding-left: 0px;
+    padding-right: 0px;
     text-align: center;
 }
 .screens_container{

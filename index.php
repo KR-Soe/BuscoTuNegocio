@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
 <?php include('controller.php'); 
-    session_start();
 ?>
 <html>
 <head>
@@ -107,7 +106,7 @@
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                             <input id="password" type="password" class="form-control" name="password" placeholder="Contraseña" style="max-width: 150px;" required>
                         </div>
-                        <button type="submit" class="btn btn-default">Ingresar</button>
+                        <input type="submit" class="btn btn-default" value="Ingresar">
                         <fb:login-button scope="public_profile,email" size="medium" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="false" onlogin="checkLoginState();"></fb:login-button>
                         
                     </form>

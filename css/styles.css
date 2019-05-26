@@ -40,7 +40,7 @@
     height: 0;
 }
 .cat-rad + img{
-    width: 93px;
+    width: 80px;
     height: 75px;
     cursor: pointer;
 }
