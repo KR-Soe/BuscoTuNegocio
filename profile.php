@@ -4,8 +4,8 @@
     error_reporting(0);
     $varsesion = $_SESSION['user'];
     if($varsesion == null || $varsesion = ''){
-        echo 'Inicie sesion para continuar';
-        echo $varsesion;
+        echo '<center><h1><font color="red">Inicie sesion para continuar</font></h1></center>';
+        header("Refresh: 2; url=index.php");
         die();
     }
 ?>

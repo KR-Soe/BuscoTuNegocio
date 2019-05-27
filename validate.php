@@ -17,6 +17,7 @@
 		}
 		return $link;
 	}
+	
 	$connection = connectionBD();
 	$query = "SELECT * FROM usuario WHERE email='".$username."' AND password='".$password."'";
 	$q = mysql_query($query,$connection);
@@ -26,9 +27,12 @@
 			echo 'Usuario Validado';
 			header("Location:profile.php");
 		}else{
-			echo 'Usuario o pw incorrecto';
+			echo '<center><h1><font color="red">Usuario o pw incorrecto</font></h1></center>';
+			header("Refresh: 2; url=index.php");
+			session_destroy();
 		}
 	}catch(Excepcion $ex){
+
 	}
 	mysql_close($connection);
 ?>

@@ -51,7 +51,7 @@
         FB.getLoginStatus(function(response) {  
            if(response.status == 'connected') {  
               FB.api('/me', function(response) {  
-                  alert('Hola ' + response.name);  
+                  alert('Hola ' + response.name);
               });  
         } 
         else if(response.status == 'not_authorized') {  
@@ -366,6 +366,23 @@
                     <div class="embed-responsive-item disabled">
                         <div>
                             <h1>Negocios Encontrados:</h1>
+                                <?php
+                                    $conn = mysql_connect("localhost","root",""); 
+                                    mysql_select_db("buscotunegocio",$conn);
+                                    $exQuery = "SELECT * FROM negocio";
+                                    $result = mysql_query($exQuery);
+                                    while ($fila = mysql_fetch_object($result)){ 
+                                        $img = $fila->foto;
+                                        echo $fila->nombre . "<br>"; 
+                                        echo $fila->rubro . "<br>"; 
+                                        echo $fila->comuna . "<br>"; 
+                                        echo $fila->direccion . "<br>"; 
+                                        ?><img src="data:image/jpeg;base64,<?php echo base64_encode($img); ?>"/>
+                                        <?php
+                                        echo $fila->tags . "<br>"; 
+                                    } 
+                                    
+                                ?>
                         </div>
                     </div>
                     <div class="button__container">
