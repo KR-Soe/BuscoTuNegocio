@@ -52,3 +52,41 @@
     width: 100%;
     height: 120px;
 }
+
+
+
+
+.module-images {
+    overflow-x: scroll;
+}
+
+.container__module {
+    width: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.container__module > div {
+    display: inline-block;
+    max-width: 25%;
+    width: 25%;
+    min-width: 25%;
+    border: 1px solid #eaeaea;
+    background-color: white;
+    min-height: 300px;
+}
+
+.container__img {
+    height: 200px;
+    min-height: 200px;
+    width: 100%;
+}
+
+.container__module img {
+    width: 100%;
+}
+
+.container__img img {
+    width: 100%;
+    height: 100%;
+}

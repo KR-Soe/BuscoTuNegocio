@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<?php 
+<?php
     session_start();
-    error_reporting(0);
     $varsesion = $_SESSION['user'];
     if($varsesion == null || $varsesion = ''){
         echo '<center><h1><font color="red">Inicie sesion para continuar</font></h1></center>';
@@ -19,7 +18,7 @@
     <link rel="stylesheet" href="css/designs.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="./js/actions.js"></script>
-    <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>    
+    <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-inverse">
@@ -49,25 +48,25 @@
                     Bienvenido <?php echo $_SESSION['user'] ?>
                 </h1>
                 <p><a href="session.off.php">Cerrar Sesion</a></p>
-                
+
                 <p>Para publicar su negocio rellene los siguientes campos:</p>
             </article>
         </section>
         <br>
         <section class="row from">
-            <form action="databaseNegocios.php" method="POST">
+            <form action="databaseNegocios.php" method="post" enctype="multipart/form-data">
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label>Nombre del Negocio</label>
-                        <input type="text" class="form-control" name="nameN" placeholder="Nombre de Ejemplo">
+                        <input type="text" class="form-control" name="name" placeholder="Nombre de Ejemplo">
                     </div>
                     <div class="form-group col-md-4">
                         <label>Rubro</label>
-                        <input type="text" class="form-control" name="rubroN" placeholder="Ejemplo: Peliqueria">
+                        <input type="text" class="form-control" name="rubro" placeholder="Ejemplo: Peluqueria">
                     </div>
                     <div class="form-group col-md-4">
                         <label>Comuna</label>
-                        <select class="form-control" name="cboComuna">
+                        <select class="form-control" name="comune">
                             <option value="">Seleccione</option>
                             <option value="Macul">Macúl</option>
                             <option value="Cerrillos">Cerrillos</option>
@@ -105,18 +104,18 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label>Direccion</label>
-                        <input type="text" class="form-control" name="direccionN" placeholder="Calle y Numero">
+                        <input type="text" class="form-control" name="address" placeholder="Calle y Numero">
                     </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label>Foto del Negocio</label>
-                        <input type="file" class="form-control-file" name="fotoN">
+                        <input type="file" class="form-control-file" name="image">
                     </div>
                     <div class="form-group col-md-4">
                         <label>Tags</label>
-                        <input type="text" class="form-control" name="tagN" placeholder="Ejemplo: unisex, teñidas, alisado">
+                        <input type="text" class="form-control" name="tag" placeholder="Ejemplo: unisex, teñidas, alisado">
                 </div>
-                <input type="submit" name="" value="Agregar Negocio">
+                <input type="submit" value="Agregar Negocio">
             </form>
         </section>
         <div class="row">
@@ -124,6 +123,6 @@
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </body>
 </html>

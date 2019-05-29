@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<?php include('controller.php'); 
+<?php include('controller.php');
 ?>
 <html>
 <head>
@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Busco Tu Negocio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/designs.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/designs.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <script src="./js/actions.js"></script>
-    <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>    
+    <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
 </head>
 <body onload="next(current + 1)">
 <div id="fb-root"></div>
@@ -23,9 +23,9 @@
       xfbml      : true,
       version    : 'v3.3'
     });
-      
-    FB.AppEvents.logPageView();   
-      
+
+    FB.AppEvents.logPageView();
+
   };
 
   (function(d, s, id){
@@ -39,30 +39,30 @@
    FB.getLoginStatus(function(response) {
         statusChangeCallback(response);
    });
-    
+
    function checkLoginState() {
      FB.getLoginStatus(function(response) {
-    validarUsuario();     
+    validarUsuario();
      statusChangeCallback(response);
    });
    }
-     
-    function validarUsuario() {  
-        FB.getLoginStatus(function(response) {  
-           if(response.status == 'connected') {  
-              FB.api('/me', function(response) {  
+
+    function validarUsuario() {
+        FB.getLoginStatus(function(response) {
+           if(response.status == 'connected') {
+              FB.api('/me', function(response) {
                   alert('Hola ' + response.name);
-              });  
-        } 
-        else if(response.status == 'not_authorized') {  
-            alert('Debes autorizar la app!');  
-        } 
-        else {  
-            alert('Debes ingresar a tu cuenta de Facebook!');  
-        }  
-        });  
+              });
+        }
+        else if(response.status == 'not_authorized') {
+            alert('Debes autorizar la app!');
+        }
+        else {
+            alert('Debes ingresar a tu cuenta de Facebook!');
+        }
+        });
     }
-</script>  
+</script>
 
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -108,20 +108,20 @@
                         </div>
                         <input type="submit" class="btn btn-default" value="Ingresar">
                         <fb:login-button scope="public_profile,email" size="medium" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="false" onlogin="checkLoginState();"></fb:login-button>
-                        
+
                     </form>
                     ¿No tiene una cuenta? <br>
                     Registrese de forma gratuita haciendo click
                     <a id="modal-btn">aqui.</a>
 
-                    <!--        MODAL        -->  
+                    <!--        MODAL        -->
                     <div id="reg-modal" class="content-modal">
                         <div class="body-modal">
                             <div class="header-modal">
                                 <span id="close-modal-btn" class="close-modal">&times;</span>
                                 <h2>Registrate En Busco Tu Negocio</h2>
                             </div>
-			    
+
                             <form name="reg-form" class="reg-form" method="POST" action="database.php">
                                 <table class="reg-table">
                                     <tr>
@@ -138,7 +138,7 @@
                                         </td>
                                         <td>
                                             <input class="reg-data" type="text" name="txtNombre" maxlength="55" required>
-                                        </td>   
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -364,26 +364,32 @@
                         </form>
                     </div>
                     <div class="embed-responsive-item disabled">
-                        <div>
-                            <h1>Negocios Encontrados:</h1>
+                    <h1>Negocios Encontrados:</h1>
+                        <div class="module-images">
+                                <section class="container__module">
                                 <?php
-                                    $conn = mysql_connect("localhost","root",""); 
-                                    mysql_select_db("buscotunegocio",$conn);
-                                    
+                                    // mysql_select_db("buscotunegocio", $connection);
+
                                     $exQuery = "SELECT * FROM negocio";
-                                    $result = mysql_query($exQuery);
-                                    while ($fila = mysql_fetch_object($result)){ 
-                                        $img = $fila->foto;
-                                        echo $fila->nombre . "<br>"; 
-                                        echo $fila->rubro . "<br>"; 
-                                        echo $fila->comuna . "<br>"; 
-                                        echo $fila->direccion . "<br>"; 
-                                        ?><img src="data:image/jpeg;base64,<?php echo base64_encode($img); ?>"/>
-                                        <?php
-                                        echo $fila->tags . "<br>";
-                                    } 
-                                    
-                                ?>
+
+
+                                    $result = $mysqli->query($exQuery);
+
+
+
+                                    foreach($result as $item) { ?>
+                                        <div>
+                                            <div class="container__img">
+                                                <img src="<?php echo($item["foto"]); ?>" alt="" />
+                                            </div>
+
+                                            <div>
+                                                <div><?php echo($item["nombre"]); ?></div>
+                                                <div><?php echo($item["direccion"]); ?></div>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+                            </section>
                         </div>
                     </div>
                     <div class="button__container">
@@ -434,7 +440,7 @@
         </p>
     </footer>
     <script src="./js/modal.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
 </body>
 </html>
