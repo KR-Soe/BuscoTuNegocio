@@ -369,6 +369,7 @@
                                 <?php
                                     $conn = mysql_connect("localhost","root",""); 
                                     mysql_select_db("buscotunegocio",$conn);
+                                    
                                     $exQuery = "SELECT * FROM negocio";
                                     $result = mysql_query($exQuery);
                                     while ($fila = mysql_fetch_object($result)){ 
@@ -379,7 +380,7 @@
                                         echo $fila->direccion . "<br>"; 
                                         ?><img src="data:image/jpeg;base64,<?php echo base64_encode($img); ?>"/>
                                         <?php
-                                        echo $fila->tags . "<br>"; 
+                                        echo $fila->tags . "<br>";
                                     } 
                                     
                                 ?>

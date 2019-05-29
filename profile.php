@@ -55,15 +55,15 @@
         </section>
         <br>
         <section class="row from">
-            <form>
+            <form action="databaseNegocios.php" method="POST">
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label>Nombre del Negocio</label>
-                        <input type="text" class="form-control" id="nameN" placeholder="Nombre de Ejemplo">
+                        <input type="text" class="form-control" name="nameN" placeholder="Nombre de Ejemplo">
                     </div>
                     <div class="form-group col-md-4">
                         <label>Rubro</label>
-                        <input type="text" class="form-control" id="rubroN" placeholder="Ejemplo: Peliqueria">
+                        <input type="text" class="form-control" name="rubroN" placeholder="Ejemplo: Peliqueria">
                     </div>
                     <div class="form-group col-md-4">
                         <label>Comuna</label>
@@ -105,18 +105,18 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label>Direccion</label>
-                        <input type="text" class="form-control" id="direccionN" placeholder="Calle y Numero">
+                        <input type="text" class="form-control" name="direccionN" placeholder="Calle y Numero">
                     </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label>Foto del Negocio</label>
-                        <input type="file" class="form-control-file" id="fotoN">
+                        <input type="file" class="form-control-file" name="fotoN">
                     </div>
                     <div class="form-group col-md-4">
                         <label>Tags</label>
-                        <input type="text" class="form-control" id="direccionN" placeholder="Ejemplo: unisex, teñidas, alisado">
+                        <input type="text" class="form-control" name="tagN" placeholder="Ejemplo: unisex, teñidas, alisado">
                 </div>
-                <input type="submit" value="Agregar Negocio">
+                <input type="submit" name="" value="Agregar Negocio">
             </form>
         </section>
         <div class="row">
