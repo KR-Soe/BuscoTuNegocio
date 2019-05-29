@@ -368,15 +368,9 @@
                         <div class="module-images">
                                 <section class="container__module">
                                 <?php
-                                    // mysql_select_db("buscotunegocio", $connection);
-
                                     $exQuery = "SELECT * FROM negocio";
-
-
                                     $result = $mysqli->query($exQuery);
-
-
-
+                                    
                                     foreach($result as $item) { ?>
                                         <div>
                                             <div class="container__img">
