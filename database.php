@@ -1,17 +1,18 @@
 <?php
     include('controller.php');
         $uEmail = $_POST['txtEmail'];
-        $uFullName = $_POST['txtNombre'];
+        $uName = $_POST['txtNombre'];
+        $uLastN = $_POST['txtApellido'];
         $uPhone = $_POST['txtFono'];
         $uAddress = $_POST['cboComuna'];
         $uPassword = $_POST['txtPassword'];
-	    $tipouser = "normal";
+	    $tipouser = 2;
 
-        $exQuery = "Insert into usuario(email,tipouser,password) values ('$uEmail','$tipouser','$uPassword')";
-        $conn = $ConexionBD->query($exQuery);
-        $exQuery = "Insert into persona(nombreCompleto,fono,comuna,Usuario_email) values ('$uFullName','$uPhone','$uAddress','$uEmail')";
-        $conn = $ConexionBD->query($exQuery);
-        if($conn)
+        $stmt = $mysqli->prepare("INSERT INTO usuario VALUES('', ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param('ssssiii', $uEmail, $uPassword, $uName, $uLastN, $uPhone, $tipouser,$uAddress);
+        $stmt->execute();
+        
+        if($mysqli)
         {
             header("Location:index.php");
         }else{

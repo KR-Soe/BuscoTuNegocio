@@ -13,9 +13,10 @@
     $address = $_POST['address'];
     $tag = $_POST['tag'];
     $varsesion = $_SESSION['user'];
+    $estado = 0;
 
     $image = file_get_contents($_FILES['image']['tmp_name']);
-
+    $userId = $_SESSION['id'];
     $target_dir = "./uploads/";
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
 
@@ -34,7 +35,8 @@
 
     $imageLocation = $target_file;
 
-    $stmt = $mysqli->prepare("INSERT INTO negocio VALUES('', ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param('sssssss', $name, $rubro, $comune, $address, $imageLocation, $tag, $varsesion);
+    $stmt = $mysqli->prepare("INSERT INTO negocio VALUES('', ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param('ssssiiiii', $name, $address, $imageLocation, $varsesion, $estado, $rubro, $comune, $tag, $userId);
+    echo ($userId);
     $stmt->execute();
 ?>
