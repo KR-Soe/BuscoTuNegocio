@@ -1,5 +1,8 @@
+body{
+    background-color: #f2f2f2;
+}
 header{
-    background: #27833E;
+    background: #218E55;
     color: #fff;
 }
 .main-article{
@@ -8,14 +11,29 @@ header{
 }
 aside{
     border-radius: 8px;
-    background: #1B271E;
+    background: #1F2020;
     color: #fff;
 }
 section{
-    background: #f2f2f2;
+    background: white;
+    border-radius: 8px;
 }
 .navbar{
+    background-color: #2ED67F;
     margin-bottom: 0px;
+    border: 0px;
+}
+.navbar .navbar-brand{
+    color: white;
+}
+.navbar-inverse .navbar-nav>li>a{
+    color: white;
+}
+.navbar-inverse .navbar-nav>li>a:hover{
+    color: gray;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+    background-color: #218E55;
 }
 .info-image{
     width: 20%;
@@ -32,17 +50,18 @@ section{
     left: 0;
     bottom: 0;
     width: 100%;
-    background: #19530D;
+    background: #218E55;
     color: white;
     text-align: center;
 }
 footer > p{
     margin: 0px;
 }
-table tr td label{
+.comunas tr td label{
     display: flex;
     font-size: 90%;
 }
+
 table tr td{
     width: 33%;
 }
@@ -73,6 +92,17 @@ input[type=checkbox], input[type=radio] {
 }
 input[type=radio]:hover{
     cursor: pointer;
+}
+
+.btn{
+    color: #1F2020;
+    background-color: #2ED67F;
+}
+.btn:active{
+    background-color: #2ED67F;
+}
+.btn:hover{
+    background-color: #218E55;
 }
 /* ESTILOS PARA UTILIZAR EL MODAL */
 #modal-btn:hover{
@@ -117,7 +147,7 @@ input[type=radio]:hover{
 }
 .header-modal{
     text-align: center;
-    background: #67B621;
+    background: #218E55;
     border-radius: 5px;
     padding: 10px;
     position: relative;
@@ -154,9 +184,10 @@ input[type=radio]:hover{
     width: auto;
 }
 .aside-destacados{
-    background: #19530D;
+    background: #1F2020;
 }
 .buscar{
+    background: white;
     padding-left: 0px;
     padding-right: 0px;
     text-align: center;

@@ -6,7 +6,6 @@
     //     header("Refresh: 2; url=index.php");
     //     die();
     // }
-
     $name = $_POST['name'];
     $rubro = $_POST['rubro'];
     $comune = $_POST['comune'];

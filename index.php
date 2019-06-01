@@ -68,7 +68,7 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Busco Tu Negocio</a>
+                <a class="navbar-brand" href="index.php">Busco Tu Negocio</a>
             </div>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Inicio</a></li>
@@ -81,6 +81,7 @@
     </nav>
     <header>
         <div class="container">
+            <img class="logoBtnImg" src="images/BTNLogo.png">
             <h1>Busco Tu Negocio</h1>
             <h4>La comodidad a tu alcance</h4>
         </div>
@@ -222,6 +223,7 @@
                 </p>
             </aside>
         </section>
+        <br>
         <div class="row">
             <article class="col-xs-12 col-sm-8 col-md-9 col-lg-9 buscar">
                 <div class="screens_container">
@@ -290,83 +292,95 @@
                     <div class="embed-responsive-item disabled">
                         <form>
                             <h2>¿Qué Busca?</h2>
-                            <table class="comunas categorias" border="1px">
+                            <table class="comunas categorias" border="1px"> <!-- IMAGENES EN 100px -->
                                 <tr>
                                     <td>
                                         <label>
                                             <input type="checkbox" class="cat-rad" name="verduras">
-                                            <img src="images/Icons/. (1).jpg">
+                                            <img src="https://img.icons8.com/ios/100/000000/salad-bowl.png">
                                         </label>
+                                        <p>Verduras</p>
                                     </td>
                                     <td>
                                         <label>
-                                            <input type="checkbox" class="cat-rad" name="vehiculos">
-                                            <img src="images/Icons/. (1).png">
+                                            <input type="checkbox" class="cat-rad" name="herramientas">
+                                            <img src="https://img.icons8.com/ios/100/000000/maintenance.png">
                                         </label>
+                                        <p>Herramientas</p>
                                     </td>
                                     <td>
                                         <label>
                                             <input type="checkbox" class="cat-rad" name="almacen">
-                                            <img src="images/Icons/. (2).jpg">
+                                            <img src="https://img.icons8.com/ios/100/000000/small-business.png">
                                         </label>
+                                        <p>Almacén</p>
                                     </td>
                                     <td>
                                         <label>
                                             <input type="checkbox" class="cat-rad" name="ropa">
-                                            <img src="images/Icons/. (2).png">
+                                            <img src="https://img.icons8.com/ios/100/000000/clothes.png">
                                         </label>
+                                        <p>Ropa</p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <label>
                                             <input type="checkbox" class="cat-rad" name="arte">
-                                            <img src="images/Icons/. (3).png">
+                                            <img src="https://img.icons8.com/ios/100/000000/easel.png">
                                         </label>
+                                        <p>Arte</p>
                                     </td>
                                     <td>
                                         <label>
                                             <input type="checkbox" class="cat-rad" name="libros">
-                                            <img src="images/Icons/. (4).png">
+                                            <img src="https://img.icons8.com/ios/100/000000/literature.png">
                                         </label>
+                                        <p>Libros</p>
                                     </td>
                                     <td>
                                         <label>
-                                            <input type="checkbox" class="cat-rad" name="maternidad">
-                                            <img src="images/Icons/. (5).png">
+                                            <input type="checkbox" class="cat-rad" name="infantil">
+                                            <img src="https://img.icons8.com/ios/100/000000/babys-room.png">
                                         </label>
+                                        <p>Infantíl</p>
                                     </td>
                                     <td>
                                         <label>
                                             <input type="checkbox" class="cat-rad" name="mascota">
-                                            <img src="images/Icons/. (6).png">
+                                            <img src="https://img.icons8.com/ios/100/000000/pet-commands-summon.png">
                                         </label>
+                                        <p>Mascota</p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <label>
                                             <input type="checkbox" class="cat-rad" name="hogar">
-                                            <img src="images/Icons/. (7).png">
+                                            <img src="https://img.icons8.com/ios/100/000000/sofa-with-buttons.png">
                                         </label>
+                                        <p>Hogar</p>
                                     </td>
                                     <td>
                                         <label>
                                             <input type="checkbox" class="cat-rad" name="tecnologia">
-                                            <img src="images/Icons/. (10).png">
+                                            <img src="https://img.icons8.com/ios/100/000000/multiple-devices.png">
                                         </label>
+                                        <p>Tecnología</p>
                                     </td>
                                     <td>
                                         <label>
                                             <input type="checkbox" class="cat-rad" name="peluqueria">
-                                            <img src="images/Icons/. (9).png">
+                                            <img src="https://img.icons8.com/ios/100/000000/barbershop.png">
                                         </label>
+                                        <p>Look</p>
                                     </td>
                                     <td>
                                         <label>
                                             <input type="checkbox" class="cat-rad" name="otros">
-                                            <img src="images/Icons/. (8).png">
+                                            <img src="https://img.icons8.com/ios/100/000000/circled-o.png">
                                         </label>
+                                        <p>Otros</p>
                                     </td>
                                 </tr>
                             </table>
@@ -430,9 +444,11 @@
                             <span class="sr-only">Next</span>
                           </a>
                         </div>
-                </aside>
+            </aside>
         </div>
     </div>
+    <br>
+    <br>
     <footer class="footer">
         <p>&copy; Derechos Reservador 2019
             <a href="http://portales.inacap.cl">Inacap</a>
@@ -444,6 +460,6 @@
     </footer>
     <script src="./js/modal.js"></script>
     <script src="./js/jquery.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </body>
 </html>
