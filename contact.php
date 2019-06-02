@@ -27,6 +27,7 @@
     </nav>
     <header>
         <div class="container">
+            <img class="logoBtnImg" src="images/BTNLogo.png">
             <h1>Contactanos</h1>
             <h4>Busco Tu Negocio</h4>
         </div>

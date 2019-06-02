@@ -38,6 +38,7 @@
     </nav>
     <header>
         <div class="container">
+            <img class="logoBtnImg" src="images/BTNLogo.png">
             <h1>Busco Tu Negocio</h1>
             <h4>La comodidad a tu alcance</h4>
         </div>
@@ -59,11 +60,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label>Nombre del Negocio</label>
-                        <input type="text" class="form-control" name="name" placeholder="Nombre de Ejemplo">
+                        <input type="text" class="form-control" name="name" placeholder="Nombre de Ejemplo" required="requiered">
                     </div>
                     <div class="form-group col-md-4">
                         <label>Rubro</label>
-                        <select class="form-control" name="rubro">
+                        <select class="form-control" name="rubro" required="requiered">
                             <option value="">Seleccione</option>
                             <option value="1">Peluqueria</option>
                             <option value="2">Hogar</option>
@@ -81,7 +82,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label>Comuna</label>
-                        <select class="form-control" name="comune">
+                        <select class="form-control" name="comune" required="requiered">
                             <option value="">Seleccione</option>
                             <option value="1">Macúl</option>
                             <option value="2">Cerrillos</option>
@@ -119,16 +120,16 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label>Direccion</label>
-                        <input type="text" class="form-control" name="address" placeholder="Calle y Numero">
+                        <input type="text" class="form-control" name="address" placeholder="Calle y Numero" required="requiered">
                     </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label>Foto del Negocio</label>
-                        <input type="file" class="form-control-file" name="image">
+                        <input type="file" class="form-control-file" name="image" required="requiered">
                     </div>
                     <div class="form-group col-md-4">
                         <label>Tags</label>
-                        <select class="form-control" name="tag">
+                        <select class="form-control" name="tag" required="requiered">
                             <option value="">Seleccione</option>
                             <option value="1">Nocturnas</option>
                             <option value="2">Delivery</option>
