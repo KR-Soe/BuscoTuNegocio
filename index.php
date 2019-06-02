@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/designs.css">
     <link rel="stylesheet" href="./css/styles.css">
-    <script src="./js/actions.js"></script>
     <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
 </head>
 <body onload="next(current + 1)">
@@ -212,7 +211,7 @@
                                         <td colspan="2">
                                             <div>
                                                 <!-- <button id="reg-done" type="button" class="btn btn-success btn-lg" name="save-reg" href="database.php">Registrarse</button> -->
-                                                <input type="submit" value="Registrarse">
+                                                <input type="submit" value="Registrarse" onclick=(closeModal())>
                                             </div>
                                         </td>
                                     </tr>
@@ -228,96 +227,99 @@
             <article class="col-xs-12 col-sm-8 col-md-9 col-lg-9 buscar">
                 <div class="screens_container">
                     <div class="embed-responsive-item disabled">
-                       <form>
+                       <form method="POST" action="select.php">
                             <h2>Seleccione Su Comuna</h2>
                             <table class="comunas" border="1px">
                                 <tr>
-                                    <td><label><input type="radio" class="radio" name="opradio">Macul</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">Cerrillos</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">Cerro Navia</label></td>
+                                    <td><label><input type="radio" value="1" class="radio" name="opradio">Macul</label></td>
+                                    <td><label><input type="radio" value="2" class="radio" name="opradio">Cerrillos</label></td>
+                                    <td><label><input type="radio" value="3" class="radio" name="opradio">Cerro Navia</label></td>
                                 </tr>
                                 <tr>
-                                    <td><label><input type="radio" class="radio" name="opradio">Conchalí</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">El Bosque</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">Estación central</label></td>
+                                    <td><label><input type="radio" value="4" class="radio" name="opradio">Conchalí</label></td>
+                                    <td><label><input type="radio" value="5" class="radio" name="opradio">El Bosque</label></td>
+                                    <td><label><input type="radio" value="6" class="radio" name="opradio">Estación central</label></td>
                                 </tr>
                                 <tr>
-                                    <td><label><input type="radio" class="radio" name="opradio">Huechuraba</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">Independencia</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">La Cisterna</label></td>
+                                    <td><label><input type="radio" value="7" class="radio" name="opradio">Huechuraba</label></td>
+                                    <td><label><input type="radio" value="8" class="radio" name="opradio">Independencia</label></td>
+                                    <td><label><input type="radio" value="9" class="radio" name="opradio">La Cisterna</label></td>
                                 </tr>
                                 <tr>
-                                    <td><label><input type="radio" class="radio" name="opradio">La Florida</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">La Granja</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">La Pintana</label></td>
+                                    <td><label><input type="radio" value="10" class="radio" name="opradio">La Florida</label></td>
+                                    <td><label><input type="radio" value="11" class="radio" name="opradio">La Granja</label></td>
+                                    <td><label><input type="radio" value="12" class="radio" name="opradio">La Pintana</label></td>
                                 </tr>
                                 <tr>
-                                    <td><label><input type="radio" class="radio" name="opradio">La Reina</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">Las Condes</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">Lo Barnechea</label></td>
+                                    <td><label><input type="radio" value="13" class="radio" name="opradio">La Reina</label></td>
+                                    <td><label><input type="radio" value="14" class="radio" name="opradio">Las Condes</label></td>
+                                    <td><label><input type="radio" value="15" class="radio" name="opradio">Lo Barnechea</label></td>
                                 </tr>
                                 <tr>
-                                    <td><label><input type="radio" class="radio" name="opradio">Lo Espejo</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">Lo Prado</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">Maipú</label></td>
+                                    <td><label><input type="radio" value="16" class="radio" name="opradio">Lo Espejo</label></td>
+                                    <td><label><input type="radio" value="17" class="radio" name="opradio">Lo Prado</label></td>
+                                    <td><label><input type="radio" value="18" class="radio" name="opradio">Maipú</label></td>
                                 </tr>
                                 <tr>
-                                    <td><label><input type="radio" class="radio" name="opradio">Ñuñoa</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">Pedro Aguirres Cerda</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">Peñalolén</label></td>
+                                    <td><label><input type="radio" value="19" class="radio" name="opradio">Ñuñoa</label></td>
+                                    <td><label><input type="radio" value="20" class="radio" name="opradio">Pedro Aguirres Cerda</label></td>
+                                    <td><label><input type="radio" value="21" class="radio" name="opradio">Peñalolén</label></td>
                                 </tr>
                                 <tr>
-                                    <td><label><input type="radio" class="radio" name="opradio">Providencia</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">Quilicura</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">Quinta Normal</label></td>
+                                    <td><label><input type="radio" value="22" class="radio" name="opradio">Providencia</label></td>
+                                    <td><label><input type="radio" value="23" class="radio" name="opradio">Quilicura</label></td>
+                                    <td><label><input type="radio" value="24" class="radio" name="opradio">Quinta Normal</label></td>
                                 </tr>
                                 <tr>
-                                    <td><label><input type="radio" class="radio" name="opradio">Recoleta</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">Renca</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">San Joaquín</label></td>
+                                    <td><label><input type="radio" value="25" class="radio" name="opradio">Recoleta</label></td>
+                                    <td><label><input type="radio" value="26" class="radio" name="opradio">Renca</label></td>
+                                    <td><label><input type="radio" value="27" class="radio" name="opradio">San Joaquín</label></td>
                                 </tr>
                                 <tr>
-                                    <td><label><input type="radio" class="radio" name="opradio">San Miguel</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">San Ramón</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">Santiago</label></td>
+                                    <td><label><input type="radio" value="28" class="radio" name="opradio">San Miguel</label></td>
+                                    <td><label><input type="radio" value="29" class="radio" name="opradio">San Ramón</label></td>
+                                    <td><label><input type="radio" value="30" class="radio" name="opradio">Santiago</label></td>
                                 </tr>
                                 <tr>
-                                    <td><label><input type="radio" class="radio" name="opradio">Pudahuel</label></td>
-                                    <td><label><input type="radio" class="radio" name="opradio">Vitacura</label></td>
+                                    <td><label><input type="radio" value="31" class="radio" name="opradio">Pudahuel</label></td>
+                                    <td><label><input type="radio" value="32" class="radio" name="opradio">Vitacura</label></td>
                                     <td></td>
                                 </tr>
                             </table>
                         </form>
+                        <div class="button__container">
+                            <button class="btn btn-success" onclick="next(current + 1)">Siguiente</button>
+                        </div>
                     </div>
                     <div class="embed-responsive-item disabled">
-                        <form>
+                        <form method="POST" action="select.php">
                             <h2>¿Qué Busca?</h2>
                             <table class="comunas categorias" border="1px"> <!-- IMAGENES EN 100px -->
                                 <tr>
                                     <td>
                                         <label>
-                                            <input type="checkbox" class="cat-rad" name="verduras">
+                                            <input type="radio" class="cat-rad" name="cat-rad" value="3" onclick="getCat(value)">
                                             <img src="https://img.icons8.com/ios/100/000000/salad-bowl.png">
                                         </label>
                                         <p>Verduras</p>
                                     </td>
                                     <td>
                                         <label>
-                                            <input type="checkbox" class="cat-rad" name="herramientas">
+                                            <input type="radio" class="cat-rad" name="cat-rad" value="11" onclick="getCat(value)">
                                             <img src="https://img.icons8.com/ios/100/000000/maintenance.png">
                                         </label>
                                         <p>Herramientas</p>
                                     </td>
                                     <td>
                                         <label>
-                                            <input type="checkbox" class="cat-rad" name="almacen">
+                                            <input type="radio" class="cat-rad" name="cat-rad" value="5" onclick="getCat(value)">
                                             <img src="https://img.icons8.com/ios/100/000000/small-business.png">
                                         </label>
                                         <p>Almacén</p>
                                     </td>
                                     <td>
                                         <label>
-                                            <input type="checkbox" class="cat-rad" name="ropa">
+                                            <input type="radio" class="cat-rad" name="cat-rad" value="6" onclick="getCat(value)">
                                             <img src="https://img.icons8.com/ios/100/000000/clothes.png">
                                         </label>
                                         <p>Ropa</p>
@@ -326,28 +328,28 @@
                                 <tr>
                                     <td>
                                         <label>
-                                            <input type="checkbox" class="cat-rad" name="arte">
+                                            <input type="radio" class="cat-rad" name="cat-rad" value="7" onclick="getCat(value)">
                                             <img src="https://img.icons8.com/ios/100/000000/easel.png">
                                         </label>
                                         <p>Arte</p>
                                     </td>
                                     <td>
                                         <label>
-                                            <input type="checkbox" class="cat-rad" name="libros">
+                                            <input type="radio" class="cat-rad" name="cat-rad" value="10" onclick="getCat(value)">
                                             <img src="https://img.icons8.com/ios/100/000000/literature.png">
                                         </label>
                                         <p>Libros</p>
                                     </td>
                                     <td>
                                         <label>
-                                            <input type="checkbox" class="cat-rad" name="infantil">
+                                            <input type="radio" class="cat-rad" name="cat-rad" value="9" onclick="getCat(value)">
                                             <img src="https://img.icons8.com/ios/100/000000/babys-room.png">
                                         </label>
                                         <p>Infantíl</p>
                                     </td>
                                     <td>
                                         <label>
-                                            <input type="checkbox" class="cat-rad" name="mascota">
+                                            <input type="radio" class="cat-rad" name="cat-rad" value="8" onclick="getCat(value)">
                                             <img src="https://img.icons8.com/ios/100/000000/pet-commands-summon.png">
                                         </label>
                                         <p>Mascota</p>
@@ -356,37 +358,48 @@
                                 <tr>
                                     <td>
                                         <label>
-                                            <input type="checkbox" class="cat-rad" name="hogar">
+                                            <input type="radio" class="cat-rad" name="cat-rad" value="2" onclick="getCat(value)">
                                             <img src="https://img.icons8.com/ios/100/000000/sofa-with-buttons.png">
                                         </label>
                                         <p>Hogar</p>
                                     </td>
                                     <td>
                                         <label>
-                                            <input type="checkbox" class="cat-rad" name="tecnologia">
+                                            <input type="radio" class="cat-rad" name="cat-rad" value="4" onclick="getCat(value)">
                                             <img src="https://img.icons8.com/ios/100/000000/multiple-devices.png">
                                         </label>
                                         <p>Tecnología</p>
                                     </td>
                                     <td>
                                         <label>
-                                            <input type="checkbox" class="cat-rad" name="peluqueria">
+                                            <input type="radio" class="cat-rad" name="cat-rad" value="1" onclick="getCat(value)">
                                             <img src="https://img.icons8.com/ios/100/000000/barbershop.png">
                                         </label>
                                         <p>Look</p>
                                     </td>
                                     <td>
                                         <label>
-                                            <input type="checkbox" class="cat-rad" name="otros">
+                                            <input type="radio" class="cat-rad" name="cat-rad" value="12" onclick="getCat(value)">
                                             <img src="https://img.icons8.com/ios/100/000000/circled-o.png">
                                         </label>
                                         <p>Otros</p>
                                     </td>
                                 </tr>
                             </table>
+                            <div class="button__container">
+                                <button class="btn btn-success" onclick="back(current - 1)">Atras</button>
+                                <button type="submit" class="btn btn-success" onclick="next(current + 1)">Siguiente</button>
+                            </div>
                         </form>
                     </div>
-                    <div class="embed-responsive-item disabled">
+                    <script>
+                        function getCat(value){
+                            var val;
+                            val = value;
+                            console.log(val);
+                        }
+                    </script>
+                    <div class="embed-responsive-item disabled"> 
                     <h1>Negocios Encontrados:</h1>
                         <div class="module-images">
                                 <section class="container__module">
@@ -408,10 +421,6 @@
                                     <?php } ?>
                             </section>
                         </div>
-                    </div>
-                    <div class="button__container">
-                        <button class="btn btn-success" onclick="back(current - 1)">Atras</button>
-                        <button class="btn btn-success" onclick="next(current + 1)">Siguiente</button>
                     </div>
                 </div>
             </article>
@@ -458,8 +467,9 @@
             Desarrolladores: Manosalva Lukas. Vera Sergio
         </p>
     </footer>
-    <script src="./js/modal.js"></script>
     <script src="./js/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/actions.js"></script>
 </body>
 </html>

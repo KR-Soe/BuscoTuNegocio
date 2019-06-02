@@ -76,7 +76,7 @@
                             <option value="8">Mascota</option>
                             <option value="9">Bebes</option>
                             <option value="10">Biblioteca</option>
-                            <option value="11">Servicios</option>
+                            <option value="11">Herramientas</option>
                             <option value="12">Otros</option>
                         </select>
                     </div>
