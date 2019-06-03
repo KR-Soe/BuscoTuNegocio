@@ -32,7 +32,13 @@ function back(number) {
     current = current - 1;
 }
 
-
+/*
+function getCat(){
+    var radioComu;
+    radioComu = document.querySelector('input[name="cat-rad"]:checked').value;
+    console.log(radioComu);
+}
+*/
 
 /*var limit = 2;
 let arr = [];
