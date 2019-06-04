@@ -21,17 +21,13 @@
                     <li><a href="profile.php">Perfil</a></li>
                     <li><a href="premium.php">Negocios Vip</a></li>
                     <li class="active"><a href="contacto.php">Contactanos</a></li>
-		            <li><a href="politicaPrivacidad.html">Politica de Privacidad</a></li>
+		            <li><a href="politicaPrivacidad.php">Politica de Privacidad</a></li>
                 </ul>
         </div>
     </nav>
-    <header>
-        <div class="container">
-            <img class="logoBtnImg" src="images/BTNLogo.png">
-            <h1>Contactanos</h1>
-            <h4>Busco Tu Negocio</h4>
-        </div>
-    </header>
+    <?php 
+        include './includes/header.php';
+    ?>
     <div class="container">
         <section class="row from">
             <form id="comment-section">
@@ -47,7 +43,10 @@
                 <textarea class="form-control" name="commentC" form="comment-section" cols="90" rows="6"></textarea>
             </div>
         </section>  
-    </div>                  
+    </div>
+    <?php
+        include './includes/footer.php';
+    ?>                  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
 </body>

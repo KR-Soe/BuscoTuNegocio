@@ -32,17 +32,13 @@
                     <li class="active"><a href="#">Perfil</a></li>
                     <li><a href="premium.php">Negocios Vip</a></li>
                     <li><a href="contact.php">Contactanos</a></li>
-		            <li><a href="politicaPrivacidad.html">Politica de Privacidad</a></li>
+		            <li><a href="politicaPrivacidad.php">Politica de Privacidad</a></li>
                 </ul>
         </div>
     </nav>
-    <header>
-        <div class="container">
-            <img class="logoBtnImg" src="images/BTNLogo.png">
-            <h1>Busco Tu Negocio</h1>
-            <h4>La comodidad a tu alcance</h4>
-        </div>
-    </header>
+    <?php 
+        include './includes/header.php';
+    ?>
     <div class="container">
         <section class="main row">
             <article class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
@@ -153,6 +149,9 @@
             <h2>Lista de Solicitudes (<?php ?>0)</h2>
         </div>
     </div>
+    <?php
+        include './includes/footer.php';
+    ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </body>

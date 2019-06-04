@@ -1,8 +1,6 @@
 ﻿<!DOCTYPE html>
 <?php include('controller.php');
     session_start();
-    $test1 = "test1";
-
 ?>
 <html>
 <head>
@@ -18,16 +16,6 @@
 <body onload="next(current + 1)">
 <div id="fb-root"></div>
 <script type="text/javascript">
-    var val = 0;
-    var comu = 0;
-    function getCat(value){
-        val = value;
-        console.log(val);
-    }
-    function getComune(value){
-        comu = value;
-        console.log(comu);
-    }
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '442847286518472',
@@ -75,28 +63,10 @@
         });
     }
 </script>
-
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="index.php">Busco Tu Negocio</a>
-            </div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Inicio</a></li>
-                    <li><a href="profile.php">Perfil</a></li>
-                    <li><a href="premium.php">Negocios Vip</a></li>
-                    <li><a href="contact.php">Contactanos</a></li>
-		            <li><a href="politicaPrivacidad.html">Politica de Privacidad</a></li>
-                </ul>
-        </div>
-    </nav>
-    <header>
-        <div class="container">
-            <img class="logoBtnImg" src="images/BTNLogo.png">
-            <h1>Busco Tu Negocio</h1>
-            <h4>La comodidad a tu alcance</h4>
-        </div>
-    </header>
+    <?php 
+        include './includes/nav.php';
+        include './includes/header.php';
+    ?>
     <div class="container">
         <section class="main row">
             <article class="col-xs-12 col-sm-8 col-md-9 col-lg-9"> <!-- Se puede borrar el ultimo col-lg porque toma la propiedad del anterior col-->
@@ -128,109 +98,9 @@
                     <a id="modal-btn">aqui.</a>
 
                     <!--        MODAL        -->
-                    <div id="reg-modal" class="content-modal">
-                        <div class="body-modal">
-                            <div class="header-modal">
-                                <span id="close-modal-btn" class="close-modal">&times;</span>
-                                <h2>Registrate En Busco Tu Negocio</h2>
-                            </div>
-
-                            <form name="reg-form" class="reg-form" method="POST" action="database.php">
-                                <table class="reg-table">
-                                    <tr>
-                                        <td>
-                                            <label>Correo Electronico</label>
-                                        </td>
-                                        <td>
-                                            <input class="reg-data" type="email" name="txtEmail" placeholder="Ejemplo@gmail.com" maxlength="50" required>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label>Nombre</label>
-                                        </td>
-                                        <td>
-                                            <input class="reg-data" type="text" name="txtNombre" maxlength="55" required>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label>Apellido</label>
-                                        </td>
-                                        <td>
-                                            <input class="reg-data" type="text" name="txtApellido" maxlength="55" required>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label>Telefono Movil</label>
-                                        </td>
-                                        <td>
-                                            <input class="reg-data" type="text" name="txtFono" maxlength="9" required>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label>Comuna</label>
-                                        </td>
-                                        <td>
-                                            <select class="form-control" name="cboComuna">
-                                            <option value="">Seleccione</option>
-                                                <option value="1">Macúl</option>
-                                                <option value="2">Cerrillos</option>
-                                                <option value="3">Cerro Navia</option>
-                                                <option value="4">Conchalí</option>
-                                                <option value="5">El Bosque</option>
-                                                <option value="6">Estacion Central</option>
-                                                <option value="7">Huechuraba</option>
-                                                <option value="8">Independencia</option>
-                                                <option value="9">La Cisterna</option>
-                                                <option value="10">La Florida</option>
-                                                <option value="11">La Granja</option>
-                                                <option value="12">La Pintana</option>
-                                                <option value="13">La Reina</option>
-                                                <option value="14">Las Condes</option>
-                                                <option value="15">Lo Barnechea</option>
-                                                <option value="16">Lo Espejo</option>
-                                                <option value="17">Lo Prado</option>
-                                                <option value="18">Maipú</option>
-                                                <option value="19">Ñuñoa</option>
-                                                <option value="20">Pedro Aguirres Cerda</option>
-                                                <option value="21">Peñalolen</option>
-                                                <option value="22">Providencia</option>
-                                                <option value="23">Quilicura</option>
-                                                <option value="24">Quinta Normal</option>
-                                                <option value="25">Recoleta</option>
-                                                <option value="26">Renca</option>
-                                                <option value="27">San Joaquín</option>
-                                                <option value="28">San Miguel</option>
-                                                <option value="29">San Ramón</option>
-                                                <option value="30">Santiago</option>
-                                                <option value="31">Pudahuel</option>
-                                                <option value="32">Vitacura</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label>Contraseña</label>
-                                        </td>
-                                        <td>
-                                            <input class="reg-data" type="password" name="txtPassword" maxlength="15" required>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">
-                                            <div>
-                                                <!-- <button id="reg-done" type="button" class="btn btn-success btn-lg" name="save-reg" href="database.php">Registrarse</button> -->
-                                                <input type="submit" value="Registrarse" onclick=(closeModal())>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </form>
-                        </div>
-                    </div>
+                    <?php 
+                        include './includes/modalReg.php';
+                    ?>
                 </p>
             </aside>
         </section>
@@ -238,185 +108,10 @@
         <div class="row">
             <article class="col-xs-12 col-sm-8 col-md-9 col-lg-9 buscar">
                 <div class="screens_container">
-                    <div class="embed-responsive-item disabled">
-                       <form method="POST" action="select.php">
-                            <h2>Seleccione Su Comuna</h2>
-                            <table class="comunas" border="1px">
-                                <tr>
-                                    <td><label><input type="radio" value="1" class="radio" onclick="getComune(value)" name="opradio">Macul</label></td>
-                                    <td><label><input type="radio" value="2" class="radio" onclick="getComune(value)" name="opradio">Cerrillos</label></td>
-                                    <td><label><input type="radio" value="3" class="radio" onclick="getComune(value)" name="opradio">Cerro Navia</label></td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="radio" value="4" class="radio" onclick="getComune(value)" name="opradio">Conchalí</label></td>
-                                    <td><label><input type="radio" value="5" class="radio" onclick="getComune(value)" name="opradio">El Bosque</label></td>
-                                    <td><label><input type="radio" value="6" class="radio" onclick="getComune(value)" name="opradio">Estación central</label></td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="radio" value="7" class="radio" onclick="getComune(value)" name="opradio">Huechuraba</label></td>
-                                    <td><label><input type="radio" value="8" class="radio" onclick="getComune(value)" name="opradio">Independencia</label></td>
-                                    <td><label><input type="radio" value="9" class="radio" onclick="getComune(value)" name="opradio">La Cisterna</label></td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="radio" value="10" class="radio" onclick="getComune(value)" name="opradio">La Florida</label></td>
-                                    <td><label><input type="radio" value="11" class="radio" onclick="getComune(value)" name="opradio">La Granja</label></td>
-                                    <td><label><input type="radio" value="12" class="radio" onclick="getComune(value)" name="opradio">La Pintana</label></td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="radio" value="13" class="radio" onclick="getComune(value)" name="opradio">La Reina</label></td>
-                                    <td><label><input type="radio" value="14" class="radio" onclick="getComune(value)" name="opradio">Las Condes</label></td>
-                                    <td><label><input type="radio" value="15" class="radio" onclick="getComune(value)" name="opradio">Lo Barnechea</label></td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="radio" value="16" class="radio" onclick="getComune(value)" name="opradio">Lo Espejo</label></td>
-                                    <td><label><input type="radio" value="17" class="radio" onclick="getComune(value)" name="opradio">Lo Prado</label></td>
-                                    <td><label><input type="radio" value="18" class="radio" onclick="getComune(value)" name="opradio">Maipú</label></td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="radio" value="19" class="radio" onclick="getComune(value)" name="opradio">Ñuñoa</label></td>
-                                    <td><label><input type="radio" value="20" class="radio" onclick="getComune(value)" name="opradio">Pedro Aguirres Cerda</label></td>
-                                    <td><label><input type="radio" value="21" class="radio" onclick="getComune(value)" name="opradio">Peñalolén</label></td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="radio" value="22" class="radio" onclick="getComune(value)" name="opradio">Providencia</label></td>
-                                    <td><label><input type="radio" value="23" class="radio" onclick="getComune(value)" name="opradio">Quilicura</label></td>
-                                    <td><label><input type="radio" value="24" class="radio" onclick="getComune(value)" name="opradio">Quinta Normal</label></td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="radio" value="25" class="radio" onclick="getComune(value)" name="opradio">Recoleta</label></td>
-                                    <td><label><input type="radio" value="26" class="radio" onclick="getComune(value)" name="opradio">Renca</label></td>
-                                    <td><label><input type="radio" value="27" class="radio" onclick="getComune(value)" name="opradio">San Joaquín</label></td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="radio" value="28" class="radio" onclick="getComune(value)" name="opradio">San Miguel</label></td>
-                                    <td><label><input type="radio" value="29" class="radio" onclick="getComune(value)" name="opradio">San Ramón</label></td>
-                                    <td><label><input type="radio" value="30" class="radio" onclick="getComune(value)" name="opradio">Santiago</label></td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="radio" value="31" class="radio" onclick="getComune(value)" name="opradio">Pudahuel</label></td>
-                                    <td><label><input type="radio" value="32" class="radio" onclick="getComune(value)" name="opradio">Vitacura</label></td>
-                                    <td></td>
-                                </tr>
-                            </table>
-
-                            <?php
-
-                                $test2 = "<script>document.write(comu);</script>";
-
-                            ?>
-                            
-                            <div class="button__container">
-                                    <button type="button" class="btn btn-success" onclick="next(current + 1)">Siguiente</button>
-                            </div>
-                    </div>
-                    <div class="embed-responsive-item disabled">
-                            <form method="POST" action="select.php">
-                                <h2>¿Qué Busca?</h2>
-                                <table class="comunas categorias" border="1px"> <!-- IMAGENES EN 100px -->
-                                    <tr>
-                                        <td>
-                                            <label>
-                                                <input type="radio" class="cat-rad" name="cat-rad" value="3" onclick="getCat(value)">
-                                                <img src="https://img.icons8.com/ios/100/000000/salad-bowl.png">
-                                            </label>
-                                            <p>Verduras</p>
-                                        </td>
-                                        <td>
-                                            <label>
-                                                <input type="radio" class="cat-rad" name="cat-rad" value="11" onclick="getCat(value)">
-                                                <img src="https://img.icons8.com/ios/100/000000/maintenance.png">
-                                            </label>
-                                            <p>Herramientas</p>
-                                        </td>
-                                        <td>
-                                            <label>
-                                                <input type="radio" class="cat-rad" name="cat-rad" value="5" onclick="getCat(value)">
-                                                <img src="https://img.icons8.com/ios/100/000000/small-business.png">
-                                            </label>
-                                            <p>Almacén</p>
-                                        </td>
-                                        <td>
-                                            <label>
-                                                <input type="radio" class="cat-rad" name="cat-rad" value="6" onclick="getCat(value)">
-                                                <img src="https://img.icons8.com/ios/100/000000/clothes.png">
-                                            </label>
-                                            <p>Ropa</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label>
-                                                <input type="radio" class="cat-rad" name="cat-rad" value="7" onclick="getCat(value)">
-                                                <img src="https://img.icons8.com/ios/100/000000/easel.png">
-                                            </label>
-                                            <p>Arte</p>
-                                        </td>
-                                        <td>
-                                            <label>
-                                                <input type="radio" class="cat-rad" name="cat-rad" value="10" onclick="getCat(value)">
-                                                <img src="https://img.icons8.com/ios/100/000000/literature.png">
-                                            </label>
-                                            <p>Libros</p>
-                                        </td>
-                                        <td>
-                                            <label>
-                                                <input type="radio" class="cat-rad" name="cat-rad" value="9" onclick="getCat(value)">
-                                                <img src="https://img.icons8.com/ios/100/000000/babys-room.png">
-                                            </label>
-                                            <p>Infantíl</p>
-                                        </td>
-                                        <td>
-                                            <label>
-                                                <input type="radio" class="cat-rad" name="cat-rad" value="8" onclick="getCat(value)">
-                                                <img src="https://img.icons8.com/ios/100/000000/pet-commands-summon.png">
-                                            </label>
-                                            <p>Mascota</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label>
-                                                <input type="radio" class="cat-rad" name="cat-rad" value="2" onclick="getCat(value)">
-                                                <img src="https://img.icons8.com/ios/100/000000/sofa-with-buttons.png">
-                                            </label>
-                                            <p>Hogar</p>
-                                        </td>
-                                        <td>
-                                            <label>
-                                                <input type="radio" class="cat-rad" name="cat-rad" value="4" onclick="getCat(value)">
-                                                <img src="https://img.icons8.com/ios/100/000000/multiple-devices.png">
-                                            </label>
-                                            <p>Tecnología</p>
-                                        </td>
-                                        <td>
-                                            <label>
-                                                <input type="radio" class="cat-rad" name="cat-rad" value="1" onclick="getCat(value)">
-                                                <img src="https://img.icons8.com/ios/100/000000/barbershop.png">
-                                            </label>
-                                            <p>Look</p>
-                                        </td>
-                                        <td>
-                                            <label>
-                                                <input type="radio" class="cat-rad" name="cat-rad" value="12" onclick="getCat(value)">
-                                                <img src="https://img.icons8.com/ios/100/000000/circled-o.png">
-                                            </label>
-                                            <p>Otros</p>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <?php 
-                                    $test1 = "<script>document.write(val);</script>";
-
-                                    echo "<script>document.write(val);</script>";
-                                    echo "<script>document.write(comu);</script>";
-                                ?>
-                                 <div class="button__container">
-                                    <button class="btn btn-success" onclick="back(current - 1)">Atras</button>
-                                    <button type="submit" class="btn btn-success" onclick="next(current + 1)">Siguiente</button>
-                                </div>
-                            </form>
-                        </form>                        
-                    </div>
+                    <?php 
+                        include './includes/sComune.php';
+                        include './includes/sCategory.php';
+                    ?>
                 </div>
             </article>
             <aside class="aside-destacados col-xs-12 col-sm-4 col-md-3 col-lg-3">
@@ -451,17 +146,9 @@
             </aside>
         </div>
     </div>
-    <br>
-    <br>
-    <footer class="footer">
-        <p>&copy; Derechos Reservador 2019
-            <a href="http://portales.inacap.cl">Inacap</a>
-        </p>
-        <p>
-            Contacto: +569 1111 2222 <br>
-            Desarrolladores: Manosalva Lukas. Vera Sergio
-        </p>
-    </footer>
+    <?php
+        include './includes/footer.php';
+    ?>
     <script src="./js/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="./js/modal.js"></script>
