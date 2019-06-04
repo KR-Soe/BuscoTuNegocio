@@ -3,66 +3,11 @@
     session_start();
 ?>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Busco Tu Negocio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/designs.css">
-    <link rel="stylesheet" href="./css/styles.css">
-    <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
-</head>
+<?php 
+    include './includes/importsHead.php';
+?>
+<script src="./js/facebook.js"></script>
 <body onload="next(current + 1)">
-<div id="fb-root"></div>
-<script type="text/javascript">
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '442847286518472',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v3.3'
-    });
-
-    FB.AppEvents.logPageView();
-
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/es_LA/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-
-   FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-   });
-
-   function checkLoginState() {
-     FB.getLoginStatus(function(response) {
-    validarUsuario();
-     statusChangeCallback(response);
-   });
-   }
-
-    function validarUsuario() {
-        FB.getLoginStatus(function(response) {
-           if(response.status == 'connected') {
-              FB.api('/me', function(response) {
-                  alert('Hola ' + response.name);
-              });
-        }
-        else if(response.status == 'not_authorized') {
-            alert('Debes autorizar la app!');
-        }
-        else {
-            alert('Debes ingresar a tu cuenta de Facebook!');
-        }
-        });
-    }
-</script>
     <?php 
         include './includes/nav.php';
         include './includes/header.php';

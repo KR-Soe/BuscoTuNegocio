@@ -5,22 +5,22 @@ include("controller.php");
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Negocios Encontrados</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./css/designs.css">
-    <link rel="stylesheet" href="./css/styles.css">
-    <script src="main.js"></script>
-</head>
+<?php
+    include './includes/importsHead.php';
+?>
+<head><title>Negocios Encontrados</title></head>
 <body>
-    <h1>Negocios Encontrados:</h1>
+    <?php 
+        include './includes/nav.php';
+        include './includes/header.php';
+        $exQuery = "SELECT * FROM negocio where comuna_negocio_id='".$comuna."' and rubro_negocio_id='".$category."'";
+        $result = $mysqli->query($exQuery);
+        $total = $result->num_rows;
+    ?>
+    <h1>Negocios Encontrados(<?php echo($total);?>):</h1>
     <div class="module-images">
         <section class="container__module">
-            <?php
-                $exQuery = "SELECT * FROM negocio where comuna_negocio_id='".$comuna."' and rubro_negocio_id='".$category."'";
-                $result = $mysqli->query($exQuery);    
+            <?php    
                 foreach($result as $item) { 
             ?>
             <div>
@@ -35,5 +35,8 @@ include("controller.php");
             <?php } ?>
         </section>
     </div>
+    <?php 
+        include './includes/footer.php';
+    ?>
 </body>
 </html>
