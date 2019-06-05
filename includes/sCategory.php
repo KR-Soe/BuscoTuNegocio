@@ -94,7 +94,7 @@
                                     </tr>
                                 </table>
                                  <div class="button__container">
-                                    <button class="btn btn-success" onclick="back(current - 1)">Atras</button>
+                                    <button type="button" class="btn btn-success" onclick="back(current - 1)">Atras</button>
                                     <button type="submit" class="btn btn-success" onclick="next(current + 1)">Siguiente</button>
                                 </div>
             </form>
