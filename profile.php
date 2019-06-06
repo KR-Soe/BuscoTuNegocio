@@ -145,8 +145,16 @@
                 <input type="submit" value="Agregar Negocio">
             </form>
         </section>
+        <?php 
+            function normalUser(){
+                $exQuery = "SELECT * FROM negocio where ='".$comuna."' and rubro_negocio_id='".$category."'";
+                $result = $mysqli->query($exQuery);
+                $total = $result->num_rows;
+            }
+        ?>
         <div class="row">
-            <h2>Lista de Solicitudes (<?php ?>0)</h2>
+            <h2>Lista de Solicitudes (<?php $total ?>)</h2>
+            
         </div>
     </div>
     <?php
