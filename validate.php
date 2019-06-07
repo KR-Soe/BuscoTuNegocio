@@ -4,7 +4,7 @@
 	$username = $_POST['email'];
 	$password =$_POST['password'];
 
-	$query = "SELECT * FROM usuario WHERE email='".$username."' AND password='".$password."'";
+	$query = "SELECT * FROM usuario WHERE email='".$username."' AND clave='".$password."'";
 	$result = $mysqli->query($query);
 
 	if($result->num_rows == 1) {
@@ -14,6 +14,7 @@
 		//print_r($result);
 		//print_r($testo->id);
 		$_SESSION['id'] = $testo->id;
+		$_SESSION['tipo_id'] = $testo->id_tipo_usuario;
 		echo($_SESSION['id']);
 		header("Location:profile.php");
 	} else {

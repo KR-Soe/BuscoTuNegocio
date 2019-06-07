@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <?php
+    include("controller.php");
     session_start();
     error_reporting(0);
     $varsesion = $_SESSION['user'];
+    $user_type = $_SESSION['tipo_id'];
+    $user_id = $_SESSION['id'];
     if($varsesion == null || $varsesion = ''){
         echo '<center><h1><font color="red">Inicie sesion para continuar</font></h1></center>';
         header("Refresh: 2; url=index.php");
         die();
     }
+    $query = "SELECT comuna.comuna FROM comuna INNER JOIN negocio ON comuna.id = id_comuna";
+    $result = $mysqli->query($query);
+    $comuna_name = $result->fetch_object();
 ?>
 <html>
 <head>
@@ -54,11 +60,34 @@
         <section class="row from">
             <form action="databaseNegocios.php" method="post" enctype="multipart/form-data">
                 <div class="form-row">
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-6">
                         <label>Nombre del Negocio</label>
-                        <input type="text" class="form-control" name="name" placeholder="Nombre de Ejemplo" required="requiered">
+                        <input type="text" class="form-control" name="name" placeholder="Nombre de Ejemplo" required="requiered" maxlength="45">
                     </div>
                     <div class="form-group col-md-4">
+                        <label>Rut del Negocio</label>
+                        <input type="text" class="form-control" name="rut" placeholder="11.111.111-1" required="requiered" maxlength="12">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label>Tags</label>
+                        <select class="form-control" name="tag" required="requiered">
+                            <option value="">Seleccione</option>
+                            <option value="1">Nocturnas</option>
+                            <option value="2">Delivery</option>
+                            <option value="3">A Domicilio</option>
+                            <option value="4">Amor</option>
+                            <option value="5">Comodidad</option>
+                            <option value="6">Buen Tiempo</option>
+                            <option value="7">Exótico</option>
+                            <option value="8">Cercano</option>
+                            <option value="9">Compromiso</option>
+                            <option value="10">Orden</option>
+                            <option value="11">Respeto</option>
+                            <option value="12">Hombres</option>
+                            <option value="13">Mujeres</option>
+                        </select>
+                </div>
+                    <div class="form-group col-md-3">
                         <label>Rubro</label>
                         <select class="form-control" name="rubro" required="requiered">
                             <option value="">Seleccione</option>
@@ -76,7 +105,7 @@
                             <option value="12">Otros</option>
                         </select>
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-3">
                         <label>Comuna</label>
                         <select class="form-control" name="comune" required="requiered">
                             <option value="">Seleccione</option>
@@ -114,47 +143,49 @@
                             <option value="32">Vitacura</option>
                         </select>
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-6">
                         <label>Direccion</label>
-                        <input type="text" class="form-control" name="address" placeholder="Calle y Numero" required="requiered">
+                        <input type="text" class="form-control" name="address" placeholder="Calle y Numero" required="requiered" maxlength="50">
                     </div>
                 <div class="form-row">
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-6">
                         <label>Foto del Negocio</label>
                         <input type="file" class="form-control-file" name="image" required="requiered">
                     </div>
-                    <div class="form-group col-md-4">
-                        <label>Tags</label>
-                        <select class="form-control" name="tag" required="requiered">
-                            <option value="">Seleccione</option>
-                            <option value="1">Nocturnas</option>
-                            <option value="2">Delivery</option>
-                            <option value="3">A Domicilio</option>
-                            <option value="4">Amor</option>
-                            <option value="5">Comodidad</option>
-                            <option value="6">Buen Tiempo</option>
-                            <option value="7">Exótico</option>
-                            <option value="8">Cercano</option>
-                            <option value="9">Compromiso</option>
-                            <option value="10">Orden</option>
-                            <option value="11">Respeto</option>
-                            <option value="12">Hombres</option>
-                            <option value="13">Mujeres</option>
-                        </select>
+                <div class="form-group col-md-4">
+                    <input type="submit" value="Agregar Negocio">
                 </div>
-                <input type="submit" value="Agregar Negocio">
             </form>
         </section>
+        <div class="row">
         <?php 
-            function normalUser(){
-                $exQuery = "SELECT * FROM negocio where ='".$comuna."' and rubro_negocio_id='".$category."'";
+            if($user_type == 1){
+                $exQuery = "SELECT * FROM negocio where estado='0' AND id_usuario='".$user_id."'";
                 $result = $mysqli->query($exQuery);
                 $total = $result->num_rows;
-            }
-        ?>
-        <div class="row">
-            <h2>Lista de Solicitudes (<?php $total ?>)</h2>
-            
+        ?>    
+                <h2>Negocios Por Aprobar: (<?php echo($total); ?>)</h2>
+                <div class="module-images">
+                    <section class="container__module">
+                        <?php    
+                            foreach($result as $item) { 
+                        ?>
+                        <div>
+                            <div class="container__img">
+                                <img src="<?php echo($item["foto"]); ?>" alt="" />
+                            </div>
+                            <div>
+                                <div>Rut: <?php echo($item["rut"]); ?></div>
+                                <div>Nombre: <?php echo($item["nombre"]); ?></div>
+                                <div>Direccion: <?php echo($item["direccion"]); ?></div>
+                                <div>Rubro: <?php echo($item["id_rubro"]); ?></div>
+                                <div>Comuna: <?php echo($item["id_comuna"]); ?></div>
+                            </div>
+                        </div>
+                        <?php } ?>
+                    </section>
+                </div>
+          <?php }?>    
         </div>
     </div>
     <?php

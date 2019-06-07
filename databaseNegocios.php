@@ -6,6 +6,7 @@
     //     header("Refresh: 2; url=index.php");
     //     die();
     // }
+    $rut = $_POST['rut'];
     $name = $_POST['name'];
     $rubro = $_POST['rubro'];
     $comune = $_POST['comune'];
@@ -34,8 +35,8 @@
 
     $imageLocation = $target_file;
 
-    $stmt = $mysqli->prepare("INSERT INTO negocio VALUES('', ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param('ssssiiiii', $name, $address, $imageLocation, $varsesion, $estado, $rubro, $comune, $tag, $userId);
+    $stmt = $mysqli->prepare("INSERT INTO negocio VALUES('', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param('ssssiiiiis', $rut, $name, $address, $imageLocation, $estado, $rubro, $comune, $userId, $tag, $varsesion);
     echo ($userId);
     $stmt->execute();
 ?>
