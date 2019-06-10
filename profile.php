@@ -159,11 +159,12 @@
         </section>
         <div class="row">
         <?php 
-            if($user_type == 1){
+            if($user_type == 2){
                 $exQuery = "SELECT * FROM negocio where estado='0' AND id_usuario='".$user_id."'";
                 $result = $mysqli->query($exQuery);
                 $total = $result->num_rows;
-        ?>    
+
+        ?>
                 <h2>Negocios Por Aprobar: (<?php echo($total); ?>)</h2>
                 <div class="module-images">
                     <section class="container__module">
@@ -185,7 +186,34 @@
                         <?php } ?>
                     </section>
                 </div>
-          <?php }?>    
+          <?php }
+          else  if($user_type == 1){
+                $exQuery = "SELECT * FROM negocio where estado='0'";
+                $result = $mysqli->query($exQuery);
+                $total = $result->num_rows;
+            ?> 
+            <h2>Negocios Por Aprobar: (<?php echo($total); ?>)</h2>
+                <div class="module-images">
+                    <section class="container__module">
+                        <?php    
+                            foreach($result as $item) { 
+                        ?>
+                        <div>
+                            <div class="container__img">
+                                <img src="<?php echo($item["foto"]); ?>" alt="" />
+                            </div>
+                            <div>
+                                <div>Rut: <?php echo($item["rut"]); ?></div>
+                                <div>Propietario: <?php echo($item["email_usuario"]); ?></div>
+                                <div>Nombre: <?php echo($item["nombre"]); ?></div>
+                                <div>Direccion: <?php echo($item["direccion"]); ?></div>
+                                <div>Rubro: <?php echo($item["id_rubro"]); ?></div>
+                                <div>Comuna: <?php echo($item["id_comuna"]); ?></div>
+                            </div>
+                        </div>
+                        <?php }} ?>
+                    </section>
+                </div>   
         </div>
     </div>
     <?php
