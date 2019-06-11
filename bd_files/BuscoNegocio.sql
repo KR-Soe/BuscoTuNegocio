@@ -39,5 +39,6 @@ CREATE TABLE negocio(
   id_rubro INT REFERENCES rubro_negocio(id),
   id_comuna INT REFERENCES comuna(id),
   id_usuario INT REFERENCES usuario(id),
-  id_tag_negocio INT REFERENCES tag_negocio(id)
+  id_tag_negocio INT REFERENCES tag_negocio(id),
+  email_usuario VARCHAR(50) NOT NULL
 );

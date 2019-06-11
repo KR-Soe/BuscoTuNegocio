@@ -24,10 +24,29 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/designs.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="./js/actions.js"></script>
     <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="./js/actions.js"></script>
 </head>
 <body>
+<style>
+  #map {
+    height: 100%;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+<!-- <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+</script> -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -165,7 +184,7 @@
                 $total = $result->num_rows;
 
         ?>
-                <h2>Negocios Por Aprobar: (<?php echo($total); ?>)</h2>
+                <h2>Sus Negocios por Aprobar: (<?php echo($total); ?>)</h2>
                 <div class="module-images">
                     <section class="container__module">
                         <?php    
@@ -206,9 +225,16 @@
                                 <div>Rut: <?php echo($item["rut"]); ?></div>
                                 <div>Propietario: <?php echo($item["email_usuario"]); ?></div>
                                 <div>Nombre: <?php echo($item["nombre"]); ?></div>
-                                <div>Direccion: <?php echo($item["direccion"]); ?></div>
+                                <div id="address_value"><?php echo($item["direccion"]); $map_address = $item['direccion']; ?></div>
+                                
+                                <script type="text/javascript">var map_address = "<?= $map_address ?>";
+                                    all_address.push(map_address);
+                                </script>
                                 <div>Rubro: <?php echo($item["id_rubro"]); ?></div>
                                 <div>Comuna: <?php echo($item["id_comuna"]); ?></div>
+                                <div><button onclick="test_address()">Aceptar</button></div>
+                                <div><button>Rechazar</button></div>
+                                <div><button id="buscar">Ubicacion</button></div>
                             </div>
                         </div>
                         <?php }} ?>
@@ -216,9 +242,28 @@
                 </div>   
         </div>
     </div>
+    <div id="elemento" class="mapa" style="width:100%;display:block;position:absolute;background:#f2777a;">xddddd</div>
+    <!-- <div id="map">ASDADAD</div> -->
+    <script>
+    $(document).ready(function() {
+        $(window).on("load resize", function() {
+            var alturaBuscador = $(".buscador").outerHeight(true),
+                alturaVentana = $(window).height(),
+                alturaMapa = alturaVentana - alturaBuscador;
+            
+            $("#elemento").css("height", alturaMapa+"px");
+        });
+    });
+    </script>
     <?php
         include './includes/footer.php';
     ?>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQdS6rOXdWzhjIvqjwxP0cQ60Nw4pUnW0&callback=initMap" async defer>
+        map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 8
+        });
+    </script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </body>
