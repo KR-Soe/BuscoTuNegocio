@@ -105,7 +105,7 @@
                             <option value="12">Hombres</option>
                             <option value="13">Mujeres</option>
                         </select>
-                </div>
+                    </div>
                     <div class="form-group col-md-3">
                         <label>Rubro</label>
                         <select class="form-control" name="rubro" required="requiered">
