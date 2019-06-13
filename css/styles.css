@@ -65,6 +65,9 @@
     align-items: center;
     display: flex;
 }
+.all{
+    display: block;
+}
 .container__module > div {
     display: inline-block;
     max-width: 25%;
@@ -96,7 +99,7 @@
         border-radius: 0px;
     }
 }
-@media screen and (max-width: 800px){
+@media screen and (max-width: 620px){
     .container__module {
         display: block;
     }

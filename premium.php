@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+    include("controller.php");
     session_start();
     $varsesion = $_SESSION['user'];
 ?>
@@ -34,6 +35,7 @@
     <?php
         include './includes/header.php';
     ?>  
+    <br>
     <div class="container">
         <section class="main row">
             <article class="col-xs-12 col-sm-8 col-md-9 col-lg-9"> <!-- Se puede borrar el ultimo col-lg porque toma la propiedad del anterior col-->
@@ -42,6 +44,30 @@
                 <p>Para formar parte de la comunidad beneficiada usted solo debera completar el registro con los correspondientes datos del negocio al cual busca promover</p>
             </article>
         </section>
+        <?php 
+            $exQuery = "SELECT * FROM negocio where estado ='3'";
+            $result = $mysqli->query($exQuery);
+            $total = $result->num_rows;
+        ?>
+        <h1>Lista de Clientes Premium(<?php echo($total);?>):</h1>
+        <div class="module-images">
+            <section class="container__module">
+                <?php    
+                    foreach($result as $item) { 
+                ?>
+                <div>
+                    <div class="container__img">
+                        <img src="<?php echo($item["foto"]); ?>" alt="" />
+                    </div>
+                    <div>
+                        <div><?php echo($item["nombre"]); ?></div>
+                        <div><?php echo($item["direccion"]); ?></div>
+                        <div><?php echo($item["rubro"]); ?></div>
+                    </div>
+                </div>
+                <?php } ?>
+            </section>
+        </div> 
         <br>
         <h3>Formulario de Promocion para su Negocio</h3>
         <details>
@@ -51,26 +77,26 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Nombre de su Negocio:</label>
-                            <input type="text" class="form-control" name="name" placeholder="Nombre de Ejemplo" required="requiered" maxlength="45">
+                            <input type="text" class="form-control" name="name" placeholder="Nombre de Ejemplo" required="required" maxlength="45">
                         </div>
                         <div class="form-group col-md-4">
                             <label>Rut del Negocio:</label>
-                            <input type="text" class="form-control" name="rut" placeholder="11.111.111-1" required="requiered" maxlength="12">
+                            <input type="text" class="form-control" name="rut" placeholder="11.111.111-1" required="required" maxlength="12">
                         </div>
                         <div class="form-group col-md-4">
                             <label>Su Correo Electronico</label>
-                            <input type="email" class="form-control" name="email" placeholder="ejemplo@gmail.com" required="requiered" maxlength="70">
+                            <input type="email" class="form-control" name="email" placeholder="ejemplo@gmail.com" required="required" maxlength="70">
                         </div>
                         <div class="form-group col-md-9">
                             <h3>Tabla de Precios</h3>
                         </div>
                         <div class="form-group col-md-4">
                             <label>Precio Mensual de Busco tu Negocio:</label>
-                            <input type="text" class="form-control" name="price" disabled="disabled" value="$1.000">
+                            <input type="text" class="form-control" name="price" disabled="disabled" value="$3.290">
                         </div>
                         <div class="form-group col-md-2">
                             <label>Cantidad de Meses</label>
-                            <select class="form-control" id="duracion" name="duracion" required="requiered" onchange="calculoPremium()">
+                            <select class="form-control" id="duracion" name="duracion" required="required" onchange="calculoPremium()">
                                 <option value="">Seleccione</option>
                                 <option value="1">1 Mes</option>
                                 <option value="3">3 Meses</option>
@@ -84,13 +110,13 @@
                             <input type="text" class="form-control" id="total" name="total" disabled="disabled" value="$">
                         </div>
                         <div class="form-group col-md-12">
-                            <input type="submit" value="Promocionar">
+                            <input type="submit" value="Pagar">
                         </div>
                     </div>
                 </form>
             </section>
         </details>
-    </div>      
+    </div>    
     <?php
         include './includes/footer.php';
     ?>    

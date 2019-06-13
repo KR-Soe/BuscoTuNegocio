@@ -35,7 +35,7 @@ function back(number) {
 
 function calculoPremium(){
     var meses = document.getElementById("duracion").value
-    var total = meses * 1000;
+    var total = meses * 3290;
     document.getElementById("total").value = '$'+total;
 }
 

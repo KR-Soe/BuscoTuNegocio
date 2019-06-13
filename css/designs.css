@@ -46,17 +46,7 @@ section{
     width: 77%;
     margin: auto;
   }
-.footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: #218E55;
-    color: white;
-    text-align: center;
-}
-footer > p{
-    margin: 0px;
-}
+
 .comunas tr td label{
     display: flex;
     font-size: 90%;
@@ -198,7 +188,20 @@ input[type=radio]:hover{
 textarea[name=commentC]{
     resize: none;
 }
-@media screen and (max-width: 700px){
+.footer{
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    width:100%;
+    background: #218E55;
+    color: white;
+    text-align: center;
+}
+footer > p{
+    margin: 0px;
+}
+
+@media screen and (max-width: 450px){
     .footer{
         position: relative;
     }
