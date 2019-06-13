@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <?php include('controller.php');
+    $varsesion = $_SESSION['user'];
     session_start();
 ?>
 <html>

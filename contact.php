@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+    session_start();
+    $varsesion = $_SESSION['user'];
+?>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -18,7 +22,8 @@
             </div>
                 <ul class="nav navbar-nav">
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="profile.php">Perfil</a></li>
+                    <?php if($varsesion !=null){?>
+                    <li><a href="profile.php">Perfil</a></li><?php }?>
                     <li><a href="premium.php">Negocios Vip</a></li>
                     <li class="active"><a href="contacto.php">Contactanos</a></li>
 		            <li><a href="politicaPrivacidad.php">Politica de Privacidad</a></li>
