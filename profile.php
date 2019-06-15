@@ -28,6 +28,17 @@
     <script src="./js/actions.js"></script>
 </head>
 <body>
+<script>
+    var update = function(id,type){
+        console.log(id);
+        $.ajax({
+            url: `webservice.php?id=${id}&type=${type}`
+        }).done(function(data) {
+            console.log(data);
+            window.location.reload();
+        });
+    }
+</script>
 <style>
   #map {
     height: 100%;
@@ -81,15 +92,15 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Nombre del Negocio</label>
-                        <input type="text" class="form-control" name="name" placeholder="Nombre de Ejemplo" required="requiered" maxlength="45">
+                        <input type="text" class="form-control" name="name" placeholder="Nombre de Ejemplo" required maxlength="45" />
                     </div>
                     <div class="form-group col-md-4">
                         <label>Rut del Negocio</label>
-                        <input type="text" class="form-control" name="rut" placeholder="11.111.111-1" required="requiered" maxlength="12">
+                        <input type="text" class="form-control" name="rut" placeholder="11.111.111-1" required maxlength="12" />
                     </div>
                     <div class="form-group col-md-2">
                         <label>Tags</label>
-                        <select class="form-control" name="tag" required="requiered">
+                        <select class="form-control" name="tag" required >
                             <option value="">Seleccione</option>
                             <option value="1">Nocturnas</option>
                             <option value="2">Delivery</option>
@@ -108,7 +119,7 @@
                     </div>
                     <div class="form-group col-md-3">
                         <label>Rubro</label>
-                        <select class="form-control" name="rubro" required="requiered">
+                        <select class="form-control" name="rubro" required >
                             <option value="">Seleccione</option>
                             <option value="1">Peluqueria</option>
                             <option value="2">Hogar</option>
@@ -126,7 +137,7 @@
                     </div>
                     <div class="form-group col-md-3">
                         <label>Comuna</label>
-                        <select class="form-control" name="comune" required="requiered">
+                        <select class="form-control" name="comune" required >
                             <option value="1">Cerrillos</option>
                             <option value="2">Cerro Navia</option>
                             <option value="3">Conchalí</option>
@@ -164,12 +175,12 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label>Direccion</label>
-                        <input type="text" class="form-control" name="address" placeholder="Calle y Numero" required="requiered" maxlength="50">
+                        <input type="text" class="form-control" name="address" placeholder="Calle y Numero" required maxlength="50" />
                     </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Foto del Negocio</label>
-                        <input type="file" class="form-control-file" name="image" required="requiered">
+                        <input type="file" class="form-control-file" name="image" required />
                     </div>
                 <div class="form-group col-md-4">
                     <input type="submit" value="Agregar Negocio">
@@ -232,8 +243,8 @@
                                 </script>
                                 <div>Rubro: <?php echo($item["id_rubro"]); ?></div>
                                 <div>Comuna: <?php echo($item["id_comuna"]); ?></div>
-                                <div><button onclick="test_address()">Aceptar</button></div>
-                                <div><button>Rechazar</button></div>
+                                <div><button onclick="update(<?php echo($item["id"]); ?>,true)">Aceptar</button></div>
+                                <div><button onclick="update(<?php echo($item["id"]); ?>,false)">Rechazar</button></div>
                                 <div><button id="buscar">Ubicacion</button></div>
                             </div>
                         </div>

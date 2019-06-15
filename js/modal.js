@@ -27,7 +27,3 @@ function outsideClick(e){
         clearData();
     }
 }
-
-function clearData(){
-    const clear = document.querySelectorAll(".reg-data");
-}

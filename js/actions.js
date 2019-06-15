@@ -53,13 +53,6 @@ function calculoPremium(){
 /* ----------------------------------------------------------*/ 
 
 
-
-
-function test_address(){
-    var address = document.getElementById("address_value").innerHTML;
-    console.log(all_address);
-}
-
 function localizar(elemento,direccion) {
     var geocoder = new google.maps.Geocoder();
     var map = new google.maps.Map(document.getElementById(elemento), {
