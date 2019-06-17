@@ -14,7 +14,7 @@ window.fbAsyncInit = function() {
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
      js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/es_LA/sdk.js";
+     js.src = "https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.3";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 
@@ -24,7 +24,7 @@ window.fbAsyncInit = function() {
 
    function checkLoginState() {
      FB.getLoginStatus(function(response) {
-    validarUsuario();
+     validarUsuario();
      statusChangeCallback(response);
    });
    }
@@ -32,15 +32,18 @@ window.fbAsyncInit = function() {
     function validarUsuario() {
         FB.getLoginStatus(function(response) {
            if(response.status == 'connected') {
-              FB.api('/me', function(response) {
-                  alert('Hola ' + response.name);
-              });
+              Carga();
         }
         else if(response.status == 'not_authorized') {
-            alert('Debes autorizar la app!');
+            alert('Debe Autorizar a la App para Ingresar');
         }
         else {
-            alert('Debes ingresar a tu cuenta de Facebook!');
+            alert('Inicia Sesion con tu Cuenta de Facebook para Continuar a tu Perfil');
         }
         });
-}
+    }
+    function Carga() {
+        FB.api('/me?fields=name,email', function(response) {
+            document.getElementById("status").innerHTML = '<p>Bienvenido '+response.name+'! Para Continuar <a href=./validaface.php?name='+ response.name.replace(" ", "_") +'&email='+ response.email +'>Click Aqui</a></p>'
+        });
+    }

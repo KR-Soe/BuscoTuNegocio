@@ -11,7 +11,7 @@
       <?php 
          include './includes/nav.php';
          include './includes/header.php';
-         $exQuery = "SELECT * FROM negocio";
+         $exQuery = "SELECT * FROM negocio where estado=1";
          $result = $mysqli->query($exQuery);
          $total = $result->num_rows;
       ?>

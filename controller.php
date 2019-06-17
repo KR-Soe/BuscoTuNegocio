@@ -1,8 +1,8 @@
 <?php
 
   $server="localhost";
-	$user="root";
-	$password="123";
+	$user="lukas";
+	$password="Lukas1995";
 	$bdName= "buscotunegocio";
 
 	$mysqli = new mysqli($server, $user, $password, $bdName);

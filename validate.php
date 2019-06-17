@@ -1,4 +1,5 @@
 <?php
+    ob_start();
 	include('controller.php');
 	error_reporting(0);
 	$username = $_POST['email'];
@@ -17,11 +18,14 @@
 		$_SESSION['tipo_id'] = $testo->id_tipo_usuario;
 		echo($_SESSION['id']);
 		header("Location:profile.php");
+		die();
 	} else {
 		echo '<center><h1><font color="red">Usuario o pw incorrecto</font></h1></center>';
 		session_destroy();
 		header("Refresh: 2; url=index.php");
+		die();
 	}
 
 	$mysqli->close();
+	ob_end_flush();
 ?>

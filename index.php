@@ -9,6 +9,7 @@
     include './includes/importsHead.php';
 ?>
 <script src="./js/facebook.js"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.3"></script>    
 <body onload="next(current + 1)">
     <?php 
         include './includes/nav.php';
@@ -38,7 +39,9 @@
                             <input id="password" type="password" class="form-control" name="password" placeholder="Contraseña" style="max-width: 150px;" required>
                         </div>
                         <input type="submit" class="btn btn-default" value="Ingresar">
-                        <fb:login-button scope="public_profile,email" size="medium" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="false" onlogin="checkLoginState();"></fb:login-button>
+                        <fb:login-button scope="public_profile,email" size="medium" data-button-type="continue_with" onlogin="checkLoginState();"></fb:login-button>
+                        <div id="status">
+                        </div>
 
                     </form>
                     ¿No tiene una cuenta? <br>

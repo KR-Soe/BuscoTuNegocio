@@ -1,4 +1,5 @@
 <?php
+    ob_start();
     session_start();
     $varsesion = $_SESSION['user'];
     if($varsesion == null || $varsesion = ''){
@@ -8,4 +9,5 @@
     }
     session_destroy();
     header("Location:index.php");
+    ob_end_flush();
 ?>
