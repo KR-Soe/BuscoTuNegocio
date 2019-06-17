@@ -25,7 +25,7 @@
                     <?php if($varsesion !=null){?>
                     <li><a href="profile.php">Perfil</a></li><?php }?>
                     <li><a href="premium.php">Negocios Vip</a></li>
-                    <li class="active"><a href="contacto.php">Contactanos</a></li>
+                    <li class="active"><a href="contact.php">Contactanos</a></li>
 		            <li><a href="politicaPrivacidad.php">Politica de Privacidad</a></li>
                 </ul>
         </div>

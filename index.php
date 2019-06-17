@@ -100,14 +100,14 @@
         </div>
         <br>
         <div class="row">
-            <section class="main row">
-                <article class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+            <article class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+                <section class="main row">
                     <h3>Busqueda Completa</h3>  
                     <p>Si lo desea, usted tambien podra realizar una busqueda avanzada seleccionando la comuna y buscando todos los negocios independiente de su rubro</p>
                     <p>Para Continuar Haga Click en el siguiente Boton y sera enviado al sitio donde se encuentran todos los negocios</p>
                     <a href="selectAll.php"><button>Buscar Todos</button></a>
-                </article>
-            </section>
+                </section>
+            </article>
         </div>
         <br>
         <br>

@@ -29,7 +29,7 @@
                   <div class="container__img">
                      <img src="<?php echo($item["foto"]); ?>" alt="" />
                   </div>
-                  <div>
+                  <div class="data_container">
                      <div><?php echo($item["nombre"]); ?></div>
                      <div><?php echo($item["direccion"]); ?></div>
                      <div><?php echo($item["rubro"]); ?></div>

@@ -76,6 +76,8 @@
     border: 1px solid #eaeaea;
     background-color: white;
     min-height: 300px;
+    background: #1F2020;
+    color: white;
 }
 .container__img {
     height: 250px;
@@ -93,6 +95,18 @@
     width: 100px;
     float: left;
     height: 100px;
+}
+.profile_button_container > div > button{
+    border: 0.7px solid white;
+    border-radius: 10px;
+    background: #2ED67F;
+    width: 100%;
+    color: black;
+}
+.profile_button_container > div > button:hover{
+    background: #218E55;
+    width: 100%;
+    color: #fff;
 }
 @media (min-width: 768px){
     .navbar {

@@ -19,6 +19,7 @@ function openModal(){
 
 function closeModal(){
     modal.style.display = "none";
+    alert('Usuario Creado');
 }
 
 function outsideClick(e){

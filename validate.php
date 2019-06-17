@@ -1,5 +1,5 @@
 <?php
-    ob_start();
+  ob_start();
 	include('controller.php');
 	error_reporting(0);
 	$username = $_POST['email'];

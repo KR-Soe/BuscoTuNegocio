@@ -243,9 +243,11 @@
                                 </script>
                                 <div>Rubro: <?php echo($item["id_rubro"]); ?></div>
                                 <div>Comuna: <?php echo($item["id_comuna"]); ?></div>
-                                <div><button onclick="update(<?php echo($item["id"]); ?>,true)">Aceptar</button></div>
-                                <div><button onclick="update(<?php echo($item["id"]); ?>,false)">Rechazar</button></div>
-                                <div><button id="buscar">Ubicacion</button></div>
+                                <div class="profile_button_container">
+                                    <div><button onclick="update(<?php echo($item["id"]); ?>,true)">Aceptar</button></div>
+                                    <div><button onclick="update(<?php echo($item["id"]); ?>,false)">Rechazar</button></div>
+                                    <div><button id="buscar">Ubicacion</button></div>
+                                </div>
                             </div>
                         </div>
                         <?php }} ?>
