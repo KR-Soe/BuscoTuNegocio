@@ -30,6 +30,9 @@
                      <div>Direccion: <?php echo($item["direccion"]); ?></div>
                      <div>Rubro: <?php echo($item["rubro"]); ?></div>
                   </div>
+                  <div class="profile_button_container">
+                     <div><button id="buscar">Ubicacion</button></div>
+                  </div>
                </div>
                <?php } ?>
          </section>

@@ -246,7 +246,6 @@
                                 <div class="profile_button_container">
                                     <div><button onclick="update(<?php echo($item["id"]); ?>,true)">Aceptar</button></div>
                                     <div><button onclick="update(<?php echo($item["id"]); ?>,false)">Rechazar</button></div>
-                                    <div><button id="buscar">Ubicacion</button></div>
                                 </div>
                             </div>
                         </div>
