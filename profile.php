@@ -28,6 +28,7 @@
     <script src="./js/actions.js"></script>
 </head>
 <body>
+<style>#lat,#lng{position:absolute;left:-70000px;}</style>
 <script>
     var update = function(id,type){
         console.log(id);
@@ -38,26 +39,14 @@
             window.location.reload();
         });
     }
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8
+            });
+        }
 </script>
-<style>
-  #map {
-    height: 100%;
-  }
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-</style>
-<!-- <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
-      }
-</script> -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -175,13 +164,15 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label>Direccion</label>
-                        <input type="text" class="form-control" name="address" placeholder="Calle y Numero" required maxlength="50" />
+                        <input class="form-control" name="address" id="pac-input" type="text" placeholder="Ingrese ubicacion" />
                     </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Foto del Negocio</label>
                         <input type="file" class="form-control-file" name="image" required />
                     </div>
+                    <input type="text" name="lat" id="lat">
+                    <input type="text" name="lng" id="lng">
                 <div class="form-group col-md-4">
                     <input type="submit" value="Agregar Negocio">
                 </div>
@@ -254,29 +245,24 @@
                 </div>   
         </div>
     </div>
-    <div id="elemento" class="mapa" style="width:100%;display:block;position:absolute;background:#f2777a;">xddddd</div>
-    <!-- <div id="map">ASDADAD</div> -->
+
     <script>
-    $(document).ready(function() {
-        $(window).on("load resize", function() {
-            var alturaBuscador = $(".buscador").outerHeight(true),
-                alturaVentana = $(window).height(),
-                alturaMapa = alturaVentana - alturaBuscador;
-            
-            $("#elemento").css("height", alturaMapa+"px");
+        $(document).ready(function() {
+            $(window).on("load resize", function() {
+                var alturaBuscador = $(".buscador").outerHeight(true),
+                    alturaVentana = $(window).height(),
+                    alturaMapa = alturaVentana - alturaBuscador;
+                
+                $("#elemento").css("height", alturaMapa+"px");
+            });
         });
-    });
     </script>
     <?php
         include './includes/footer.php';
     ?>
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQdS6rOXdWzhjIvqjwxP0cQ60Nw4pUnW0&callback=initMap" async defer>
-        map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
-        zoom: 8
-        });
-    </script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM8jg6rTajbqw1at8SvtogjNn1Jzxzpxo&libraries=places" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="./js/map.js"></script>
 </body>
 </html>
