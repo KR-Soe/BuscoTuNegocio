@@ -200,7 +200,22 @@ textarea[name=commentC]{
 footer > p{
     margin: 0px;
 }
-
+#hide_map{
+    text-align: center;
+    background: #1F2020;
+}
+#hide_container{
+    font-weight: bold;
+    color: #2ED67F;
+    font-size: 20px;
+    cursor: pointer;
+}
+#display_container{
+    font-weight: bold;
+    color: #2ED67F;
+    font-size: 20px;
+    cursor: pointer;
+}
 @media screen and (max-width: 450px){
     .footer{
         position: relative;

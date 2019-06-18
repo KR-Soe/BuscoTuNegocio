@@ -8,6 +8,7 @@
    ?>
    <head><title>Negocios Encontrados</title>
       <script src="./js/gmaps.min.js"></script>
+      <script src="./js/actions.js"></script>
    </head>
    <body>
    <style>
@@ -71,7 +72,15 @@
                <?php } ?>
          </section>
       </div>
-      <div id="map"></div>
+      <div id="hide_map">
+         <div id="display_container" class="enabled" onclick="displayMap()">
+            Mostrar Mapa
+         </div>
+         <div id="hide_container" class="disabled" onclick="hideMap()">
+            Ocultar Mapa
+         </div>
+      </div>
+      <div id="map" class="disabled"></div>
       <script>
          function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
@@ -88,6 +97,19 @@
             var address = document.getElementById('address').value;
             geocoder.geocode({'address': address}, function(results, status) {
                if (status === 'OK') {
+                  
+                  ////// MAP SWITCHER /////
+                  var switcher = document.getElementById("map");
+                  switcher.classList.remove("disabled");
+                  switcher.classList.add("enabled");
+                  var switcher = document.getElementById("display_container");
+                  switcher.classList.remove("enabled");
+                  switcher.classList.add("disabled");
+                  var switcher = document.getElementById("hide_container");
+                  switcher.classList.remove("disabled");
+                  switcher.classList.add("enabled");
+                  ////// MAP SWITCHER /////
+
                   resultsMap.setCenter(results[0].geometry.location);
                   var marker = new google.maps.Marker({
                   map: resultsMap,
