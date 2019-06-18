@@ -260,6 +260,9 @@
     <?php
         include './includes/footer.php';
     ?>
+    <br>
+    <br>
+    <br>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM8jg6rTajbqw1at8SvtogjNn1Jzxzpxo&libraries=places" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>

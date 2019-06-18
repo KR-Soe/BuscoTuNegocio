@@ -37,15 +37,8 @@
 
     $imageLocation = $target_file;
 
-    //// mapa ////
-    $geocode = file_get_contents('http://maps.google.com/maps/api/geocode/json?address='.$address.'&sensor=false');
-    $output= json_decode($geocode);
-
-    $lat = $output->results[0]->geometry->location->lat;
-    $long = $output->results[0]->geometry->location->lng;
-    
     $stmt = $mysqli->prepare("INSERT INTO negocio VALUES('', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param('ssssiiiiisii', $rut, $name, $address, $imageLocation, $estado, $rubro, $comune, $userId, $tag, $varsesion, $lat, $long);
+    $stmt->bind_param('ssssiiiiisdd', $rut, $name, $address, $imageLocation, $estado, $rubro, $comune, $userId, $tag, $varsesion, $lat, $lng);
     echo ($userId);
     $stmt->execute();
 ?>

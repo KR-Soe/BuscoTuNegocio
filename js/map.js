@@ -40,6 +40,8 @@ autocomplete.addListener('place_changed', function() {
   // infowindow.open(map, marker);
     console.log(lat)
     console.log(lng)
+    parseFloat(lat);
+    parseFloat(lng);
     document.getElementById("lat").value = lat;
     document.getElementById("lng").value = lng;
 });
