@@ -24,8 +24,12 @@
          color; white;
          border: 0px;
       }
-      #map {
-         height: 100%;
+      #map{
+         margin: 0px auto;
+         border-radius: 5px;
+         border: 2px solid green;
+         width: 50%;
+         height: 50%;
       }
       html, body {
          height: 100%;
@@ -67,11 +71,11 @@
                <?php } ?>
          </section>
       </div>
-      <div id="map" class="disabled"></div>
+      <div id="map"></div>
       <script>
          function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
-               zoom: 11,
+               zoom: 11.9,
                center: {lat: -33.447487, lng: -70.673676}
             });
             var geocoder = new google.maps.Geocoder();
@@ -84,14 +88,10 @@
             var address = document.getElementById('address').value;
             geocoder.geocode({'address': address}, function(results, status) {
                if (status === 'OK') {
-                  geocodeAddress(geocoder, map);
-                  // const change = document.getElementById('map');
-                  // change.classList.remove("disabled");
-                  // change.classList.add("enabled");
                   resultsMap.setCenter(results[0].geometry.location);
                   var marker = new google.maps.Marker({
                   map: resultsMap,
-                  position: results[0].geometry.location
+                  position: results[0].geometry.location,
                   });
                } else {
                   alert('Algo salio mal: ' + status);
@@ -99,6 +99,9 @@
             });
             }
       </script>
+      <br>
+      <br>
+      <br>
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM8jg6rTajbqw1at8SvtogjNn1Jzxzpxo&callback=initMap" ></script>
       <?php 
          include './includes/footer.php';
