@@ -10,6 +10,7 @@
 ?>
 <script src="./js/facebook.js"></script>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.3"></script>    
+
 <body onload="next(current + 1)">
     <?php 
         include './includes/nav.php';

@@ -11,7 +11,6 @@ var closeBtn = document.getElementById("close-modal-btn");
 modalBtn.addEventListener("click", openModal);
 closeBtn.addEventListener("click", closeModal);
 window.addEventListener("click", outsideClick);
-done.addEventListener("click", closeModal);
 
 function openModal(){
     modal.style.display = "block";
@@ -19,7 +18,6 @@ function openModal(){
 
 function closeModal(){
     modal.style.display = "none";
-    alert('Usuario Creado');
 }
 
 function outsideClick(e){

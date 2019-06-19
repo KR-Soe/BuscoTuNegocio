@@ -11,10 +11,12 @@
         $stmt = $mysqli->prepare("INSERT INTO usuario VALUES('', ?, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param('ssssiii', $uEmail, $uPassword, $uName, $uLastN, $uPhone, $uAddress, $tipouser);
         $stmt->execute();
-        
         if($mysqli)
         {
             header("Location:index.php");
+            ?>
+                <script>console.log('Usuario Registrado')</script>
+            <?php
         }else{
 
         }

@@ -39,13 +39,6 @@
             window.location.reload();
         });
     }
-        var map;
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8
-            });
-        }
 </script>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -245,18 +238,6 @@
                 </div>   
         </div>
     </div>
-
-    <script>
-        $(document).ready(function() {
-            $(window).on("load resize", function() {
-                var alturaBuscador = $(".buscador").outerHeight(true),
-                    alturaVentana = $(window).height(),
-                    alturaMapa = alturaVentana - alturaBuscador;
-                
-                $("#elemento").css("height", alturaMapa+"px");
-            });
-        });
-    </script>
     <?php
         include './includes/footer.php';
     ?>

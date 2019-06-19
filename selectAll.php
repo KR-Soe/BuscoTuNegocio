@@ -66,7 +66,7 @@
                      <input type="text" id="address" value="<?php echo($item["direccion"]);?>" disabled/>
                   </div>
                   <div class="profile_button_container">
-                     <input type="button" id="submit" value="Ubicar" />
+                     <input type="button" id="submit" value="Ubicar" onclick="console.log('xddd');" />
                   </div>
                </div>
                <?php } ?>
@@ -81,15 +81,16 @@
          </div>
       </div>
       <div id="map" class="disabled"></div>
+
       <script>
-         function initMap() {
+         initMap=() => {
             var map = new google.maps.Map(document.getElementById('map'), {
                zoom: 11.9,
                center: {lat: -33.447487, lng: -70.673676}
             });
             var geocoder = new google.maps.Geocoder();
-
-            document.getElementById('submit').addEventListener('click', function() {
+            var btnGeo = document.getElementById('submit');
+            btnGeo.addEventListener('click', () => {
                geocodeAddress(geocoder, map);
             });
             }
@@ -98,17 +99,9 @@
             geocoder.geocode({'address': address}, function(results, status) {
                if (status === 'OK') {
                   
-                  ////// MAP SWITCHER /////
-                  var switcher = document.getElementById("map");
-                  switcher.classList.remove("disabled");
-                  switcher.classList.add("enabled");
-                  var switcher = document.getElementById("display_container");
-                  switcher.classList.remove("enabled");
-                  switcher.classList.add("disabled");
-                  var switcher = document.getElementById("hide_container");
-                  switcher.classList.remove("disabled");
-                  switcher.classList.add("enabled");
-                  ////// MAP SWITCHER /////
+                  ////// MAP SWITCH /////
+                  mapSwitcher();
+                  ////// MAP SWITCH /////
 
                   resultsMap.setCenter(results[0].geometry.location);
                   var marker = new google.maps.Marker({

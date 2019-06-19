@@ -50,6 +50,7 @@ function displayMap(){
     switcher.classList.add("disabled");
     switcher.classList.remove("enabled");
 }
+
 function hideMap(){
     var switcher = document.getElementById("map");
     switcher.classList.remove("enabled");
@@ -60,4 +61,16 @@ function hideMap(){
     var switcher = document.getElementById("display_container");
     switcher.classList.remove("disabled");
     switcher.classList.add("enabled");
+}
+
+function mapSwitcher(){
+    var switchh = document.getElementById("map");
+    switchh.classList.remove("disabled");
+    switchh.classList.add("enabled");
+    var switchh = document.getElementById("display_container");
+    switchh.classList.remove("enabled");
+    switchh.classList.add("disabled");
+    var switchh = document.getElementById("hide_container");
+    switchh.classList.remove("disabled");
+    switchh.classList.add("enabled");
 }
