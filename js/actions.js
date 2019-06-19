@@ -74,3 +74,8 @@ function mapSwitcher(){
     switchh.classList.remove("disabled");
     switchh.classList.add("enabled");
 }
+
+function getAddress(){
+    var address = document.getElementById("address").value
+    console.log(address)
+}
