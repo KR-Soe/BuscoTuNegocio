@@ -78,7 +78,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label>Rut del Negocio</label>
-                        <input type="text" class="form-control" name="rut" placeholder="11.111.111-1" required maxlength="12" />
+                        <input id="rut" type="text" class="form-control" name="rut" placeholder="11.111.111-1" required maxlength="12" />
                     </div>
                     <div class="form-group col-md-2">
                         <label>Tags</label>
@@ -120,6 +120,7 @@
                     <div class="form-group col-md-3">
                         <label>Comuna</label>
                         <select class="form-control" name="comune" required >
+                            <option value="">Seleccione</option>
                             <option value="1">Cerrillos</option>
                             <option value="2">Cerro Navia</option>
                             <option value="3">Conchalí</option>
@@ -247,6 +248,14 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM8jg6rTajbqw1at8SvtogjNn1Jzxzpxo&libraries=places" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/css/inputmask.min.css" rel="stylesheet"/>
     <script src="./js/map.js"></script>
+    <script>
+        $("#rut").inputmask({
+        mask: "9[9.999.999]-[9|K|k]",
+    });
+    </script>
 </body>
 </html>

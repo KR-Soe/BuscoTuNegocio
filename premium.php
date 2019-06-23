@@ -5,8 +5,10 @@
     $varsesion = $_SESSION['user'];
 ?>
 <html>
-<head>
-    <meta charset="utf-8" />
+<head><meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
+      
+
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Negocios Premium</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +16,7 @@
     <link rel="stylesheet" href="css/designs.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/actions.js"></script>
+    <script src="js/rut.js"></script>
     <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>  
 </head>
 <body>
@@ -49,7 +52,7 @@
             $result = $mysqli->query($exQuery);
             $total = $result->num_rows;
         ?>
-        <h1>Lista de Clientes Premium(<?php echo($total);?>):</h1>
+        <h2>Lista de Clientes Premium(<?php echo($total);?>):</h2>
         <div class="module-images">
             <section class="container__module">
                 <?php    
@@ -60,39 +63,36 @@
                         <img src="<?php echo($item["foto"]); ?>" alt="" />
                     </div>
                     <div>
-                        <div><?php echo($item["nombre"]); ?></div>
-                        <div><?php echo($item["direccion"]); ?></div>
+                        <div><?php echo"Negocio: "; echo($item["nombre"]); ?></div>
+                        <div><?php echo "Direccion: "; echo($item["direccion"]); ?></div>
                         <div><?php echo($item["rubro"]); ?></div>
                     </div>
                 </div>
                 <?php } ?>
             </section>
         </div> 
-        <br>
         <h3>Formulario de Promocion para su Negocio</h3>
-        <details>
-            <summary>Click Aqui</summary>
             <section class="row from">
-                <form method="post">
+                <form method="post" action="./checkdatos.php">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Nombre de su Negocio:</label>
-                            <input type="text" class="form-control" name="name" placeholder="Nombre de Ejemplo" required="required" maxlength="45">
+                            <input type="text" class="form-control" name="txtname" placeholder="Nombre de Ejemplo" required="required" maxlength="45">
                         </div>
                         <div class="form-group col-md-4">
                             <label>Rut del Negocio:</label>
-                            <input type="text" class="form-control" name="rut" placeholder="11.111.111-1" required="required" maxlength="12">
+                            <input type="text" class="form-control" id="rut" name="txtrut" placeholder="Ejemplo: 11.111.111-1 / 01.111.111-1" required="required" maxlength="12">
                         </div>
                         <div class="form-group col-md-4">
                             <label>Su Correo Electronico</label>
-                            <input type="email" class="form-control" name="email" placeholder="ejemplo@gmail.com" required="required" maxlength="70">
+                            <input type="email" class="form-control" name="txtemail" placeholder="ejemplo@gmail.com" required="required" maxlength="70">
                         </div>
                         <div class="form-group col-md-9">
                             <h3>Tabla de Precios</h3>
                         </div>
                         <div class="form-group col-md-4">
                             <label>Precio Mensual de Busco tu Negocio:</label>
-                            <input type="text" class="form-control" name="price" disabled="disabled" value="$3.290">
+                            <input type="text" class="form-control" name="txtprecio" disabled="disabled" value="$3.290">
                         </div>
                         <div class="form-group col-md-2">
                             <label>Cantidad de Meses</label>
@@ -107,20 +107,36 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label>Total a Pagar</label>
-                            <input type="text" class="form-control" id="total" name="total" disabled="disabled" value="$">
+                            <input type="text" class="form-control" id="total" name="total" readonly="">
                         </div>
+                        
                         <div class="form-group col-md-12">
-                            <input type="submit" value="Pagar">
+                            
+                            <input style=" color: #fff;
+    background-color: #1F8F55;
+    border-color: #2e6da4;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;"type="submit" value="Continuar">
+                                
                         </div>
                     </div>
                 </form>
-            </section>
-        </details>
-    </div>    
+    </div> 
+    <br>
     <?php
         include './includes/footer.php';
     ?>    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/css/inputmask.min.css" rel="stylesheet"/>
+    <script>
+        $("#rut").inputmask({
+	mask: "9[9.999.999]-[9|K|k]",
+});
+    </script>
 </body>
 </html>

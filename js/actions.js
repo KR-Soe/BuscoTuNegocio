@@ -36,8 +36,11 @@ function back(number) {
 function calculoPremium(){
     var meses = document.getElementById("duracion").value
     var total = meses * 3290;
-    document.getElementById("total").value = '$'+total;
+    document.getElementById("total").value = total;
 }
+
+
+///////////// Funciones para la visibilidad del mapa /////////////
 
 function displayMap(){
     var switcher = document.getElementById("map");
@@ -73,9 +76,4 @@ function mapSwitcher(){
     var switchh = document.getElementById("hide_container");
     switchh.classList.remove("disabled");
     switchh.classList.add("enabled");
-}
-
-function getAddress(){
-    var address = document.getElementById("address").value
-    console.log(address)
 }

@@ -66,7 +66,7 @@
                      <input type="text" id="address" value="<?php echo($item["direccion"]);?>" disabled/>
                   </div>
                   <div class="profile_button_container">
-                     <input type="button" id="submit" value="Ubicar" onclick="getAddress()" />
+                     <input type="button" id="submit" value="Ubicar" onclick="console.log('xddd');" />
                   </div>
                </div>
                <?php } ?>
@@ -81,7 +81,7 @@
          </div>
       </div>
       <div id="map" class="disabled"></div>
-      
+
       <script>
          initMap=() => {
             var map = new google.maps.Map(document.getElementById('map'), {
@@ -109,7 +109,7 @@
                   position: results[0].geometry.location,
                   });
                } else {
-                  alert('Error: ' + status);
+                  alert('Algo salio mal: ' + status);
                }
             });
             }
