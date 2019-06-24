@@ -39,6 +39,11 @@ function calculoPremium(){
     document.getElementById("total").value = total;
 }
 
+function getAddress(address){
+    // console.log('xd'+address)
+    // return address;
+}
+
 
 ///////////// Funciones para la visibilidad del mapa /////////////
 

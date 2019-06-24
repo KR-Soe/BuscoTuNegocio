@@ -10,7 +10,7 @@ La Florida
 La Granja
 La Pintana
 La Reina
-Las Condes
+Las Condesas
 Lo Barnechea
 Lo Espejo
 Lo Prado
@@ -31,4 +31,3 @@ San Ramón
 Santiago
 Vitacura
 Ñuñoa
-

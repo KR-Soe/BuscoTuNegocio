@@ -37,6 +37,4 @@ $transaction->setToken('df074244a3f759bcad68af66cf1d67b828676612123e050ea3f48c5a
 $transaction->initTransaction($request); // Se inicia la transaccion enviando por parametros el request creado
 
 
-
-
 ?>

@@ -113,12 +113,13 @@
                         <div class="form-group col-md-12">
                             
                             <input style=" color: #fff;
-    background-color: #1F8F55;
-    border-color: #2e6da4;
-    padding: 10px;
-    border: 1px solid transparent;
-    border-radius: 4px;"type="submit" value="Continuar">
-                                
+                                background-color: #1F8F55;
+                                border-color: #2e6da4;
+                                padding: 10px;
+                                border: 1px solid transparent;
+                                border-radius: 4px;"
+                                type="submit" value="Continuar">
+     
                         </div>
                     </div>
                 </form>

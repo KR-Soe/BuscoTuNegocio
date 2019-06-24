@@ -66,7 +66,7 @@
                      <input type="text" id="address" value="<?php echo($item["direccion"]);?>" disabled/>
                   </div>
                   <div class="profile_button_container">
-                     <input type="button" id="submit" value="Ubicar" onclick="console.log('xddd');" />
+                     <input type="button" class="<?php echo($item["direccion"]);?>" id="submit" value="Doble Click Para Ubicar" />
                   </div>
                </div>
                <?php } ?>
@@ -83,20 +83,37 @@
       <div id="map" class="disabled"></div>
 
       <script>
+         var addressSelected;
          initMap=() => {
             var map = new google.maps.Map(document.getElementById('map'), {
                zoom: 11.9,
                center: {lat: -33.447487, lng: -70.673676}
             });
             var geocoder = new google.maps.Geocoder();
-            var btnGeo = document.getElementById('submit');
-            btnGeo.addEventListener('click', () => {
+            var btnGeo = document.querySelectorAll('#submit');
+            
+            console.log(btnGeo);
+            
+            for(var i = 0; i < btnGeo.length; i++) {
+               btnGeo[i].addEventListener("click", function(event) {
                geocodeAddress(geocoder, map);
+               addressSelected = event.target.classList.value
             });
+               
+            }
+            // function bindClick(i) {
+            //    return function() {
+                  
+            //    };
+            // }
+                                 // btnGeo.addEventListener('click', () => {
+                                 //    geocodeAddress(geocoder, map);
+                                 // });
             }
             function geocodeAddress(geocoder, resultsMap) {
-            var address = document.getElementById('address').value;
-            geocoder.geocode({'address': address}, function(results, status) {
+               //// PASAR LA DIRECCION ////
+            console.log(addressSelected);
+            geocoder.geocode({'address': addressSelected}, function(results, status) {
                if (status === 'OK') {
                   
                   ////// MAP SWITCH /////
@@ -109,7 +126,7 @@
                   position: results[0].geometry.location,
                   });
                } else {
-                  alert('Algo salio mal: ' + status);
+                  // alert('Algo salio mal: ' + status);
                }
             });
             }
