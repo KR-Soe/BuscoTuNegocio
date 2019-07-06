@@ -1,6 +1,5 @@
 ///////////// FUNCION PARA GUARDAR LA UBICACION DE LOS NEGOCIOS
 /////// Y GEOREFERENCIAR EL INPUT 
-
 var input = document.getElementById('pac-input');
 var autocomplete = new google.maps.places.Autocomplete(input);
 

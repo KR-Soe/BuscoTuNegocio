@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/designs.css">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM8jg6rTajbqw1at8SvtogjNn1Jzxzpxo&libraries=places" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="./js/actions.js"></script>
 </head>
@@ -70,7 +72,7 @@
         </section>
         <br>
         <section class="row from">
-            <form action="databaseNegocios.php" method="post" enctype="multipart/form-data">
+            <form action="databaseNegocios.php" method="POST" enctype="multipart/form-data">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Nombre del Negocio</label>
@@ -78,7 +80,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label>Rut del Negocio</label>
-                        <input id="rut" type="text" class="form-control" name="rut" placeholder="11.111.111-1" required maxlength="12" />
+                        <input id="rut" type="text" class="form-control" name="rut" placeholder="11.111.111-1" required />
                     </div>
                     <div class="form-group col-md-2">
                         <label>Tags</label>
@@ -163,12 +165,12 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Foto del Negocio</label>
-                        <input type="file" class="form-control-file" name="image" required />
+                        <input type="file" class="form-control-file" name="image" required accept="image/*"/>
                     </div>
                     <input type="text" name="lat" id="lat">
                     <input type="text" name="lng" id="lng">
                 <div class="form-group col-md-4">
-                    <input type="submit" value="Agregar Negocio">
+                    <button type="submit" class="btn btn-block">Agregar Negocio</button>
                 </div>
             </form>
         </section>
@@ -245,8 +247,6 @@
     <br>
     <br>
     <br>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM8jg6rTajbqw1at8SvtogjNn1Jzxzpxo&libraries=places" async defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.js"></script>
