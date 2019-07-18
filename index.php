@@ -20,16 +20,21 @@
     <div class="container">
         <section class="main row">
             <article class="col-xs-12 col-sm-8 col-md-9 col-lg-9"> <!-- Se puede borrar el ultimo col-lg porque toma la propiedad del anterior col-->
-                <p>
-                    <h2>Impulsa tu negocio de manera sencilla</h2>
-                    Si buscas la manera de promocionar tu negocio dentro de tu comuna o sector, este es tu sitio, ingresa ya a Busco tu Negocio, Registrate y envia todo tus datos de tu negocio para aumentar tu popularidad de manera 100% gratuita.
-                </p>
+                <h2>Impulsa tu negocio de manera sencilla</h2>
+                
+                <div class="videobn col-md-6">
+                    <iframe src="vd/BuscotuNegocio.Ogg"></iframe>
+                    <p>
+                        Si buscas la manera de promocionar tu negocio dentro de tu comuna o sector, este es tu sitio, ingresa ya a Busco tu Negocio, Registrate y envia todo tus datos de tu negocio para aumentar tu popularidad de manera 100% gratuita.
+                    </p>
+                </div>
             </article>
             <aside class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
                 <h3>Bienvenido</h3>
                 <p>
                     Si usted es dueño de algun negocio puede registrarlo
                     con tal solo tener una cuenta e iniciando sesión.
+                <p>
                     <form action="validate.php" method="POST">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>

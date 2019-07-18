@@ -42,7 +42,7 @@ CREATE TABLE negocio(
   id_tag_negocio INT REFERENCES tag_negocio(id),
   email_usuario VARCHAR(50) NOT NULL,
   lat VARCHAR(200) NOT NULL,
-  long VARCHAR(200) NOT NULL
+  longitud VARCHAR(200) NOT NULL
 );
 
 INSERT INTO comuna (id,comuna) VALUES (1,"Cerrillos");

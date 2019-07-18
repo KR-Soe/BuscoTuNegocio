@@ -1,8 +1,8 @@
 <?php
 
   $server="localhost";
-	$user="root"; //PARA EL HOSTING lukas
-	$password="123"; // Lukas1995
+	$user="lukas"; //PARA EL HOSTING lukas
+	$password="Lukas1995"; // Lukas1995
 	$bdName= "buscotunegocio";
 
 	$mysqli = new mysqli($server, $user, $password, $bdName);

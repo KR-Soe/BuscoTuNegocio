@@ -123,3 +123,19 @@
         min-width: 100%;
     }
 }
+
+.videobn{
+    display: flex;
+    width: 100%
+}
+.videobn iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 500px){
+    .videobn{
+        display: block;
+    }
+}

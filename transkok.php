@@ -1,12 +1,19 @@
 <?php
 
+include_once 'vendor/autoload.php';
+use PagoFacil\lib\Request;
+use PagoFacil\lib\Transaction;
+    
 $transaction = new Transaction();
-$transaction->setToken('df074244a3f759bcad68af66cf1d67b828676612123e050ea3f48c5af0e32ed3'); // Se debe colocar el Token Secret entregado por Pago Fácil
+$transaction->setToken('033676f45f66d848b3e2e8a4b23e86be0d374d238c97dd9e019272aa6a336a70'); // Se debe colocar el Token Secret entregado por Pago Fácil
 
+//RECUPERAR DEL POST Y METER EN ARREGLO
+
+//VALIDA
 if($transaction->validate($_POST)){
-  error_log('TRANSACCION CORRECTA');
+  //TRANSACCION CORRECTA
 }else{
-  error_log('ERROR FIRMA');
+ //ERROR FIRMA
 }
 
 

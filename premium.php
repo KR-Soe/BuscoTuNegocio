@@ -6,9 +6,6 @@
 ?>
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
-      
-
-    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Negocios Premium</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,6 +14,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/actions.js"></script>
     <script src="js/rut.js"></script>
+    <script src="js/negocio.js"></script>
     <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>  
 </head>
 <body>
@@ -73,11 +71,11 @@
         </div> 
         <h3>Formulario de Promocion para su Negocio</h3>
             <section class="row from">
-                <form method="post" action="./checkdatos.php">
+                <form method="post" action="./checkdatos.php" onsubmit="return valNegCha()">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Nombre de su Negocio:</label>
-                            <input type="text" class="form-control" name="txtname" placeholder="Nombre de Ejemplo" required="required" maxlength="45">
+                            <input type="text" class="form-control" id="txtname" name="txtname" placeholder="Nombre de Ejemplo" required="required" maxlength="45">
                         </div>
                         <div class="form-group col-md-4">
                             <label>Rut del Negocio:</label>
@@ -85,7 +83,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label>Su Correo Electronico</label>
-                            <input type="email" class="form-control" name="txtemail" placeholder="ejemplo@gmail.com" required="required" maxlength="70">
+                            <input type="email" class="form-control" id="email" name="txtemail" placeholder="ejemplo@gmail.com" required="required" maxlength="70">
                         </div>
                         <div class="form-group col-md-9">
                             <h3>Tabla de Precios</h3>
@@ -137,7 +135,7 @@
     <script>
         $("#rut").inputmask({
 	mask: "9[9.999.999]-[9|K|k]",
-});
+    });
     </script>
 </body>
 </html>

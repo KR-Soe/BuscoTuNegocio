@@ -11,13 +11,12 @@ $email = $_POST['txtemail'];
 $unitario = $_POST['txtprecio'];//irrelevante
 $meses = $_POST['duracion'];
 $monto = $_POST['total'];
-$ordenid;
-
-$query = "SELECT * FROM negocio WHERE rut='".$rut."' AND nombre='".$negocio."'";
+$estado = 1;
+$query = "SELECT * FROM negocio WHERE rut='".$rut."' AND nombre='".$negocio."' AND estado='".$estado."'";
 $result = $mysqli->query($query);
 
 if($result->num_rows == 1){
-    $ordenid = $ordenid +1;
+    
 ?>
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
@@ -70,19 +69,15 @@ if($result->num_rows == 1){
             <section class="row from">
                 <form method="post" action="./ProcesoPay.php">
                     <div class="form-row">
-                        <div class="form-group col-md-2">
-                            <label>Orden de Compra Nº:</label>
-                            <input type="text" class="form-control" name="txtorden" value="<?php echo $ordenid?>" readonly="">
+                        <div class="form-group col-md-4">
+                            <label>Rut del Negocio:</label>
+                            <input type="text" class="form-control" name="txtrut" value="<?php echo $rut?>" readonly="">
                         </div>
                         <div class="form-group col-md-4">
                             <label>Nombre Negocio:</label>
                             <input type="text" class="form-control" name="txtnegocio" value="<?php echo $negocio?>" readonly="">
                         </div>
                          
-                        <div class="form-group col-md-4">
-                            <label>Rut del Negocio:</label>
-                            <input type="text" class="form-control" name="txtrut" value="<?php echo $rut?>" readonly="">
-                        </div>
                         <div class="form-group col-md-4">
                             <label>Su Correo Electronico</label>
                             <input type="email" class="form-control" name="txtemail" value="<?php echo $email ?>" readonly="">
@@ -99,12 +94,16 @@ if($result->num_rows == 1){
                         <div class="form-group col-md-12">
                             <input type="submit" value="Pagar con PagoFacil" style="color: #fff;background-color: #337ab7;border-color: #2e6da4;padding: 10px;border: 1px solid transparent;border-radius: 4px;">
                         </div>
+                        <div class="form-group col-md-12">
+                            <input type="button" value="Cancelar" onclick="location.href='premium.php'">
+                        </div>
+
                     </div>
                 </form>
                 <br>
                 
             </section>
-    </div>
+    <br>
     <?php
         include './includes/footer.php';
     ?>    
@@ -113,7 +112,7 @@ if($result->num_rows == 1){
 </body>
 </html>
 <?php
-}else {
+}else if($result->num_rows == 0) {
     ?>
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
