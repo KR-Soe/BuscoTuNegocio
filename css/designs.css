@@ -18,6 +18,15 @@ section{
     background: white;
     border-radius: 8px;
 }
+
+.info-text{
+    padding: 2em;
+}
+
+.welcome-title{
+    font-weight: bold;
+}
+
 .navbar{
     background-color: #2ED67F;
     margin-bottom: 0px;
@@ -185,9 +194,11 @@ input[type=radio]:hover{
 .screens_container{
     display: inline-block;
 }
+
 textarea[name=commentC]{
     resize: none;
 }
+
 .footer{
     position:fixed;
     left:0px;
@@ -197,25 +208,34 @@ textarea[name=commentC]{
     color: white;
     text-align: center;
 }
+
+.bottom{
+    padding: 1em;
+}
+
 footer > p{
     margin: 0px;
 }
+
 #hide_map{
     text-align: center;
     background: #1F2020;
 }
+
 #hide_container{
     font-weight: bold;
     color: #2ED67F;
     font-size: 20px;
     cursor: pointer;
 }
+
 #display_container{
     font-weight: bold;
     color: #2ED67F;
     font-size: 20px;
     cursor: pointer;
 }
+
 @media screen and (max-width: 450px){
     .footer{
         position: relative;

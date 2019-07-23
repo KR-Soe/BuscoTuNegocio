@@ -36,18 +36,18 @@
     <br>
     <div class="container">
         <section class="row from">
-            <form id="comment-section" method="POST">
+            <form id="comment-section" method="POST" action="./sendmail.php" name="comment-section">
                 <div class="form-row">
                     <div class="form-group col-md-5">
                         <label>Ingrese su Correo</label>
-                        <input type="email" class="form-control" id="mailC" placeholder="ejemplo@gmail.com" maxlength="50" required="required">
+                        <input type="email" class="form-control" name="mailC" placeholder="ejemplo@gmail.com" maxlength="50" required="required">
                     </div>
                 </div> 
                 <div class="form-group col-md-6">
                     <label>Comentario</label>
                     <textarea class="form-control" name="commentC" form="comment-section" cols="90" rows="6" required="required"></textarea>
                 </div>
-                <input type="submit" value="Enviar Peticion">
+                <button type="submit">Enviar</button>
             </form>
         </section>  
     </div>

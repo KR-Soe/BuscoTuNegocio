@@ -62,9 +62,9 @@
     <div class="container">
         <section class="main row">
             <article class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
-                <h1>
+                <h3 class="welcome-title">
                     Bienvenido <?php echo $_SESSION['user'] ?>
-                </h1>
+                </h3>
                 <p><a href="session.off.php">Cerrar Sesion</a></p>
 
                 <p>Para publicar su negocio rellene los siguientes campos:</p>

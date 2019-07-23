@@ -113,6 +113,7 @@
         border-radius: 0px;
     }
 }
+
 @media screen and (max-width: 620px){
     .container__module {
         display: block;
@@ -121,6 +122,9 @@
         max-width: 100%;
         width: 100%;
         min-width: 100%;
+    }
+    .welcome-title{
+        font-size: medium;
     }
 }
 
@@ -137,5 +141,14 @@
 @media screen and (max-width: 500px){
     .videobn{
         display: block;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .videobn{
+        display: block;
+    }
+    .videobn iframe {
+        height: 450px;
     }
 }

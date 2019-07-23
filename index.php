@@ -23,8 +23,15 @@
                 <h2>Impulsa tu negocio de manera sencilla</h2>
                 
                 <div class="videobn col-md-6">
-                    <iframe src="vd/BuscotuNegocio.Ogg"></iframe>
-                    <p>
+                    <iframe 
+                        href="//www.youtube.com/watch?v=WKWUAoB64r4" data-videoid="WKWUAoB64r4" 
+                        class="embedded-video-large" frameborder="0" allowfullscreen="1" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                        width="400" height="230" 
+                        src="https://www.youtube.com/embed/WKWUAoB64r4">
+                    </iframe>
+                    <!-- <iframe src="https://www.youtube.com/embed/WKWUAoB64r4"></iframe> -->
+                    <p class="info-text">
                         Si buscas la manera de promocionar tu negocio dentro de tu comuna o sector, este es tu sitio, ingresa ya a Busco tu Negocio, Registrate y envia todo tus datos de tu negocio para aumentar tu popularidad de manera 100% gratuita.
                     </p>
                 </div>
@@ -107,7 +114,7 @@
         <br>
         <div class="row">
             <article class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
-                <section class="main row">
+                <section class="bottom row">
                     <h3>Busqueda Completa</h3>  
                     <p>Si lo desea, usted tambien podra realizar una busqueda avanzada seleccionando la comuna y buscando todos los negocios independiente de su rubro</p>
                     <p>Para Continuar Haga Click en el siguiente Boton y sera enviado al sitio donde se encuentran todos los negocios</p>
